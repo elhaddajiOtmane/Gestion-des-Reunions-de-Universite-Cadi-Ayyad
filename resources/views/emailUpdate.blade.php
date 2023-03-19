@@ -6,39 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<br>
 <body>
-    <p>Dear Bapa dan Ibu Dosen D3 Teknologi Informasi,</p>
-    <p>Ini adalah email pemberitahuan perubahan jadwal rapat dengan detail sebagai berikut :</p>
+    <p>Chers Bapa et Ibu Dosen D3 Teknologi Informasi,</p>
+    <p>Ceci est un courriel de notification de changement de programme de réunion avec les détails suivants :</p>
     <table>
         <tr>
-            <td>Judul</td>
+            <td>Titre</td>
             <td>: {{ $judul }}</td>
         </tr>
         <tr>
-            <td>Ketua Rapat</td>
+            <td>Président de la réunion</td>
             <td>: {{ $ketua }}</td>
         </tr>
         <tr>
-            <td>Notulis</td>
+            <td>Secrétaire de la réunion</td>
             <td>: {{ $notulis }}</td>
         </tr>
         <tr>
-            <td>Tempat</td>
+            <td>Lieu</td>
             <td>: {{ $tempat }}</td>
         </tr>
         <tr>
-            <td>Hari/Tanggal</td>
+            <td>Jour/Date</td>
             <td>: {{\Carbon\Carbon::parse($tanggal)->translatedFormat('l, d F Y')}}</td>
         </tr>
         <tr>
-            <td>Waktu</td>
+            <td>Heure</td>
             <td>: {{ $waktu }}</td>
         </tr>
     </table>
     <br>
-    <p>Mohon Bapak dan Ibu membuka kembali sistem untuk mengkonfirmasi kehadiran dengan klik di <a href="http://127.0.0.1:8000">sini</a>. </p>
-    
-    <br>
-    <p>Terima kasih atas perhatian nya.</p>
+    <p>Veuillez ouvrir à nouveau le système pour confirmer votre présence en cliquant <a href="http://127.0.0.1:8000">ici</a>.</p>
+<p>Merci de votre attention.</p>
 </body>
 </html>

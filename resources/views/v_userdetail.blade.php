@@ -50,23 +50,23 @@
       <table id="example1" class="table table-striped">
           <thead>
             <tr>
-              <th colspan="5" class="text-center"> Jadwal Notulen</th>
+              <th colspan="5" class="text-center"> Calendrier Minutes</th>
             </tr>
               <tr>
                   <th style="width: 1%" >
-                      No
+                      n
                   </th>
                   <th>
                       Title
                   </th>
                   <th>
-                      Tanggal
+                    Date
                   </th>
                   <th>
-                      Waktu
+                    Temps
                   </th>
                   <th>
-                      Tempat
+                    Lieu
                   </th>
               </tr>
           </thead>

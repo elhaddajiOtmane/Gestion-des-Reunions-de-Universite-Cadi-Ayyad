@@ -22,7 +22,7 @@
                             <form action="/user/edit/editProfile" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="name">Nama</label>
+                                <label for="name">Nom</label>
                                 <input type="textarea" name="name" id="name" class="form-control" value="{{ $user->name }}" required>
                                 <input type="textarea" name="id" id="id" class="form-control" value="{{ $user->id }}" required hidden>
                             </div>
@@ -40,7 +40,7 @@
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input name="lampiran" type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                        <label class="custom-file-label" for="exampleInputFile">Choisir file</label>
                                     </div>
                                 </div>
                                 @error('lampiran')
@@ -53,14 +53,14 @@
                                 <input type="submit" id="updateProfile" value="Save" class="btn btn-primary float-right">
                             </div>
                         </form>
-                        <a href="/home"><button class="btn btn-danger float-right mr-2">Cancel</button></a>
+                        <a href="/home"><button class="btn btn-danger float-right mr-2">annulier</button></a>
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_2">
                         <form action="/user/edit/editPassword" method="POST" id="editPasswordForm">
                             @csrf
                             <div class="form-group">
-                                <label for="password">Password Lama</label>
+                                <label for="password">Password Long</label>
                                 <input type="password" name="password" id="password" class="form-control" required>
                                 @error('password')
                                 <span class="alert-danger" role="alert">

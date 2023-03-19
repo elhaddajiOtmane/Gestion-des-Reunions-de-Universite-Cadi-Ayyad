@@ -8,22 +8,22 @@
                 <thead>
                     <tr>
                         <th style="width: 1%">
-                            No
+                            Non
                         </th>
                         <th style="width: 30%">
-                            Title
+                            titre
                         </th>
                         <th style="width: 10%" class="text-center">
-                            Tanggal
+                            Date
                         </th>
                         <th style="width: 10%" class="text-center">
-                            Waktu
+                            Temps
                         </th>
                         <th>
-                            Tempat
+                            Lieu
                         </th>
                         <th style="width: 20%" class="text-center">
-                            Notulen
+                            Minutes
                         </th>
                         <th style="width: 20%">
                         </th>

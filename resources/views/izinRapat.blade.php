@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Dear Bapak/Ibu Ketua Prodi D3 Teknologi Informasi,</p>
+    <p>Cher Monsieur/Madame le Chef du Programme D3 Technologie de l'Information,</p>
     <br>
-    <p>Ini adalah email pemberitahuan bahwa anggota rapat dengan deskripsi sebagai berikut :</p>
+    <p>Ceci est un email de notification pour les membres de la réunion avec les descriptions suivantes :</p>
     <table>
         <tr>
             <td>
-                Nama
+                Nom
             </td>
             <td>
                 : {{ $nama }}
@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <td>
-                Pesan
+                Message
             </td>
             <td>
                 : {{ $pesan }}
@@ -37,35 +37,34 @@
         </tr>
     </table>
     <br>
-    <p>Tidak dapat menghadiri rapat dengan deksripsi sebagai berikut:</p>
+    <p>Ne peut pas assister à la réunion avec les descriptions suivantes :</p>
     <table>
         <tr>
-            <td>Judul</td>
+            <td>Titre</td>
             <td>: {{ $judul }}</td>
         </tr>
         <tr>
-            <td>Ketua Rapat</td>
+            <td>Chef de Réunion</td>
             <td>: {{ $ketua }}</td>
         </tr>
         <tr>
-            <td>Notulis</td>
+            <td>Secrétaire</td>
             <td>: {{ $notulis }}</td>
         </tr>
         <tr>
-            <td>Tempat</td>
+            <td>Lieu</td>
             <td>: {{ $tempat }}</td>
         </tr>
         <tr>
-            <td>Hari/Tanggal</td>
+            <td>Jour/Date</td>
             <td>: {{\Carbon\Carbon::parse($tanggal)->translatedFormat('l, d F Y')}}</td>
         </tr>
         <tr>
-            <td>Waktu</td>
+            <td>Heure</td>
             <td>: {{ $waktu }}</td>
         </tr>
     </table>
-
-    <p>Untuk informasi lebih detail tentang anggota rapat dapat dilihat di <a href="http://127.0.0.1:8000/meeting/jadwal/{{ $id }}">sini</a>. </p>
-    <p>Terima kasih atas perhatian nya.</p>
+<p>Pour plus d'informations sur les membres de la réunion, veuillez consulter <a href="http://127.0.0.1:8000/meeting/jadwal/{{ $id }}">ici</a>. </p>
+<p>Merci de votre attention.</p>
 </body>
 </html>

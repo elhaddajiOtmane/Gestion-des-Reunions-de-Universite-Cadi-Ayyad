@@ -44,7 +44,7 @@
                             <div class="card card-primary card-outline">
                                     <div class="card-header">
                                         <h4 class="card-title w-100">
-                                            Topik Rapat
+                                            Sujet de la réunion
                                         </h4>
                                     </div>
                                 <div class="card-body">
@@ -52,7 +52,7 @@
                                         {{ $topics->judul }}
                                     @endforeach
                                 </div>
-                            </div>                              
+                            </div>
                        </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         </p>
                         <p class="text-sm">
                             <a href="/meeting/anggota/{{ $meetings->id }}">
-                                <b class="d-block">Anggota Rapat</b>
+                                <b class="d-block">Membre de la réunion</b>
                             </a>
                         </p>
                     </div>
@@ -90,7 +90,7 @@
                     </ul>
                     @endif
                     <div>
-                    
+
                     @if ($meetings->minuter==Auth::user()->id)
                         <a href="/meeting/notulensi/{{ $meetings->id }}"><button class="btn btn-sm btn-primary" @if($now->toDateTimeString()<=$meetings->tanggal.' '.$meetings->waktu_mulai)
                             disabled
@@ -105,7 +105,7 @@
         <!-- /.card-body -->
     </div>
 
-    
+
 
     @if (!is_null($result) && Auth::user()->id==$meetings->minuter)
     <div class="card card-primary card-outline">
@@ -139,6 +139,6 @@
         </div>
     </div>
     @endif
-        
+
     @endif
 @endsection

@@ -9,7 +9,7 @@
             @csrf
             <div class="card-header">
                 <h3 class="card-title">
-                    Notulensi Rapat Rutin
+                    Procès-verbal de réunion ordinaire
                 </h3>
             </div>
             <div class="card-body">
@@ -38,7 +38,7 @@
                 <input type="submit" value="Buat" class="btn btn-block btn-primary">
             </div>
             <div class="card-footer">
-                *Mohon cek kembali hasil notulensi sebelum submit.
+                *Veuillez vérifier les résultats du procès-verbal avant de soumettre.
             </div>
             </form>
         </div>

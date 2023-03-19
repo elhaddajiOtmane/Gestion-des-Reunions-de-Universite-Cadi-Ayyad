@@ -15,10 +15,10 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 1%">#</th>
-                                        <th>Rapat</th>
-                                        <th>Tanggal</th>
-                                        <th>Waktu</th>
-                                        <th>Tempat</th>
+                                        <th>Réunion</th>
+                                        <th>Date</th>
+                                        <th>Temps</th>
+                                        <th>Lieu</th>
                                         <th style="width: 10%"></th>
                                     </tr>
                                     </thead>
@@ -77,10 +77,10 @@
                                         @else
                                         <tr>
                                             <td colspan="6" class="text-center">
-                                                <h6>Tidak ada undangan terbaru.</h6>
-                                            </td>                                            
+                                                <h6>Aucune invitation récente.</h6>
+                                            </td>
                                         </tr>
-                                        @endif                            
+                                        @endif
                                     </tbody>
                                 </table>
                         </div>

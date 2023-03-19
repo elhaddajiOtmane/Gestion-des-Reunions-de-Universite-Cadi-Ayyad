@@ -2,5 +2,5 @@
 
 @section('title', 'Jadwal')
 @section('content')
-    <h1>Ini halaman Jadwal</h1>
+<h1>Voici la page Planification</h1>
 @endsection

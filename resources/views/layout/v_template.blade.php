@@ -123,7 +123,7 @@
                                 <a href="/meeting/buatrapat"
                                     class="nav-link {{ request()->is('meeting/buatrapat') ? 'active' : '' }}">
                                     <i class="far fa-plus-square nav-icon"></i>
-                                    <p>Buat Rapat</p>
+                                    <p>Créer une réunion</p>
                                 </a>
                             </li>
                         @endif
@@ -131,7 +131,7 @@
                             <a href="/meeting/jadwal" class="nav-link {{ request()->is('meeting/jadwal') || request()->is('meeting/jadwal/*')  ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
-                                    Jadwal
+                                    Calendrier
                                 </p>
                             </a>
                         </li>
@@ -139,13 +139,14 @@
                             <a href="/meeting/hasil"
                                 class="nav-link {{ request()->is('meeting/hasil') || request()->is('meeting/hasil/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
-                                <p>Hasil Rapat</p>
+                                <p>Résultats de la réunion</p>
                             </a>
                         </li>
                         {{-- <li class="nav-item">
                             <a href="/absen" class="nav-link">
                                 <i class="far fas fa-book nav-icon"></i>
-                                <p>Absensi</p>
+<p>Capacité</p>
+
                             </a>
                         </li> --}}
                     </ul>

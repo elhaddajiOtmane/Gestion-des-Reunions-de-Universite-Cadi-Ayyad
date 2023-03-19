@@ -8,22 +8,22 @@
                 <thead>
                     <tr>
                         <th style="width: 1%">
-                            No
+                            n
                         </th>
                         <th style="width: 30%">
-                            Title
+                            titre
                         </th>
                         <th style="width: 10%" class="text-center">
-                            Tanggal
+                            titre
                         </th>
                         <th style="width: 10%" class="text-center">
-                            Waktu
+                            Temps
                         </th>
                         <th>
-                            Tempat
+                            Lieu
                         </th>
                         <th style="width: 20%" class="text-center">
-                            Notulen
+                            Lieu
                         </th>
                         <th style="width: 20%">
                         </th>
@@ -56,7 +56,7 @@
                                     <i class="fas fa-eye">
                                     </i>
                                 </a>
-                                
+
                                 @if (auth()->user()->role == 2)
                                     @if ($now->toDateTimeString() < $item->tanggal.' '.$item->waktu_mulai)
                                         <a class="btn btn-info btn-sm" href="/meeting/edit/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Edit Data Rapat">

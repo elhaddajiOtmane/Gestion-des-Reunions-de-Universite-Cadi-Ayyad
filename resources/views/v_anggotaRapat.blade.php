@@ -9,13 +9,13 @@
             <thead>
                 <tr>
                     <th style="width: 1%">
-                        No
+                        Non
                     </th>
                     <th>
-                        Nama
+                        Nom
                     </th>
                     <th>
-                        Status
+                        Statut
                     </th>
                 </tr>
             </thead>
@@ -31,13 +31,13 @@
                         </td>
                         <td>
                             @if (is_null($item->respon))
-                                <span class="badge badge-warning">Pending</span>
+                                <span class="badge badge-warning">En attente</span>
                             @elseif ($item->respon==1)
-                                <span class="badge badge-primary">Akan hadir</span>
+                                <span class="badge badge-primary">Sera présent</span>
                             @elseif ($item->respon==2)
-                                <span class="badge badge-success">Hadir</span>
+                                <span class="badge badge-success">Présent</span>
                             @else
-                                <span class="badge badge-danger">Berhalangan</span>
+                                <span class="badge badge-danger">Empêché</span>
                             @endif
                         </td>
                     </tr>

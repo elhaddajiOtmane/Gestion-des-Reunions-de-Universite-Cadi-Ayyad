@@ -5,7 +5,7 @@
     <!-- Default box -->
     <div class="card card-primary">
         <div class="card-header ">
-            <h1 class="card-title">Nama Rapat : {{ $meetings->title }}</h1>
+            <h1 class="card-title">Nom de la réunion: {{ $meetings->title }}</h1>
         </div>
         <div class="card-body">
             <div class="row">
@@ -14,7 +14,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">Tanggal</span>
+                                    <span class="info-box-text text-center text-muted">Date</span>
                                     <span
                                         class="info-box-number text-center text-muted mb-0">{{ $meetings->tanggal }}</span>
                                 </div>
@@ -32,7 +32,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">Tempat</span>
+                                    <span class="info-box-text text-center text-muted">temp</span>
                                     <span
                                         class="info-box-number text-center text-muted mb-0">{{ $meetings->place }}</span>
                                 </div>
@@ -42,7 +42,7 @@
                             <div class="card card-primary card-outline">
                                     <div class="card-header">
                                         <h4 class="card-title w-100">
-                                            Agenda Rapat
+                                            Programme de la réunion
                                         </h4>
                                     </div>
                                 <div class="card-body">
@@ -50,7 +50,7 @@
                                         {{ $topics->judul }}
                                     @endforeach
                                 </div>
-                            </div>                              
+                            </div>
                        </div>
                        <div class="col-12">
                             <a href="download/{{ $meetings->id }}" target="blank" class="btn btn-outline-primary btn-block">Convert to PDF <i class="far fa-fw fa-pdf " taget="_blank"></i></a>
@@ -74,31 +74,27 @@
                         </p>
                         <p class="text-sm">
                             <a href="/meeting/anggota/{{ $meetings->id }}">
-                                <b class="d-block">Anggota Rapat</b>
+                                <b class="d-block">Membre de la réunion</b>
                             </a>
                         </p>
                     </div>
 
                     @if (!$lampirans->isEmpty())
-                    <h5 class="mt-5 text-muted">Lampiran</h5>
+                    <h5 class="mt-5 text-muted">Pièce jointe</h5>
                     <ul class="list-unstyled">
                         <?php $i = 1; ?>
                         @foreach ($lampirans as $data)
                             <li>
                                 <a rel="noopener noreferrer" href="{{ url('files/' . $data->Path) }}"
-                                    class="btn-link text-secondary"><i class="far fa-fw fa-image " taget="_blank"></i> Lampiran
+                                    class="btn-link text-secondary"><i class="far fa-fw fa-image " taget="_blank"></i> Pièce jointe
                                     {{ $i++ }}</a>
                             </li>
                         @endforeach
                     </ul>
                     @endif
                     <div>
-                    
-                    {{-- @if ($meetings->minuter==Auth::user()->id)
-                    <a href="/meeting/notulensi/{{ $meetings->id }}" class="btn btn-sm btn-primary">Catatan</a>
-                    
-                    <a href="/absen/buatabsen/{{ $meetings->id }}" class="btn btn-sm btn-warning">Absensi</a>
-                    @endif --}}
+
+
                 </div>
             </div>
         </div>
@@ -107,7 +103,7 @@
 
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title">Hasil Rapat</h3>
+            <h3 class="card-title">Résultats Réunion</h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i></button>
             </div>
@@ -120,7 +116,7 @@
 
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title">Dokumentasi Rapat</h3>
+            <h3 class="card-title">Documentation Réunion</h3>
         </div>
         <div class="card-body">
             <div class="row">
@@ -149,7 +145,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-primary">
-                        <h4 class="modal-title">Komentar</h4>
+                        <h4 class="modal-title">Commentaire</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

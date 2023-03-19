@@ -17,10 +17,10 @@
               <thead>
               <tr>
                 <th>No</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Email</th>
-                <th>Role</th>
-                <th>Foto</th>
+                <th>Rôle</th>
+                <th>Photo</th>
                 <th style="width: 20%" class="text-center">
                   Action
                 </th>
@@ -135,16 +135,16 @@
               <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
               <div class="col-md-6">
-                  <select id="role" name="role" class="form-control">
-                    <option value="1">Admin</option>
-                    <option value="2">Ketua Prodi</option>
-                    <option value="3">Dosen</option>
-                  </select>
+                <select id="role" name="role" class="form-control">
+                    <option value="1">Administrateur</option>
+                    <option value="2">Chef de département</option>
+                    <option value="3">Enseignant</option>
+                </select>
               </div>
           </div>
         </div>
         <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
           <button type="submit" class="btn btn-primary">
             {{ __('Register') }}
           </button>

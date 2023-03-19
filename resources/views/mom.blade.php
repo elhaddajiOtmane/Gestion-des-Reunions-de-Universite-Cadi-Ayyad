@@ -18,7 +18,7 @@
         .footer {
         position: fixed;
         bottom: 0;
-        left: 0px; 
+        left: 0px;
         right: 0px;
         }
         .content{
@@ -46,7 +46,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    Nama Rapat
+                                    Nom de la réunion
                                 </td>
                                 <td>
                                     : {{ $meeting->title }}
@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Hari/ Tanggal
+                                    Jour / Date
                                 </td>
                                 <td>
                                     {{-- : {{ $meeting->tanggal->format('d') }} --}}
@@ -63,7 +63,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Waktu
+                                    Temps
                                 </td>
                                 <td>
                                     : {{ $meeting->waktu_mulai }} WIB
@@ -71,7 +71,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Tempat
+                                    Lieu
                                 </td>
                                 <td>
                                     : {{ $meeting->place }}
@@ -79,7 +79,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Pimpinan Rapat
+                                    Chef de la réunion
                                 </td>
                                 <td>
                                     : {{ $leader->name }}
@@ -87,7 +87,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Notulen Rapat
+                                    Procès-verbal de la réunion
                                 </td>
                                 <td>
                                     : {{ $notulen->name }}
@@ -95,7 +95,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Peserta Rapat
+                                    Participants à la réunion
                                 </td>
                                 <td>
                                     :
@@ -107,22 +107,22 @@
                                     <?php $no = 1; ?>
                                     @foreach ($anggota as $item)
                                         {{ $no++ }}. {{ $item->name }}<br>
-                                    @endforeach                                     
+                                    @endforeach
                                 </td>
                             </tr>
                         </table>
                         <br>
-                        <p><strong>Agenda Rapat</strong></p>
+                        <p><strong>Ordre du jour de la réunion</strong></p>
                         <?php $no = 1; ?>
                         @foreach ($topik as $item)
                             {{ $no++ }}. {{ $item->judul }}<br>
-                         @endforeach 
+                         @endforeach
                         <br>
-                        <p><strong>Notulen Rapat</strong></p>
+                        <p><strong>Procès-verbal de la réunion</strong></p>
                         {!! $result->isi !!}
                         <br>
                         <div>
-                            <p><strong>Dokumentasi Rapat</strong></p>
+                            <p><strong>Documentation de la réunion</strong></p>
                             @foreach ($dokumentasi as $item)
                                 <img src="{{ url('dokumentasi/' . $item->Path) }}" class="img-fluid mb-2" alt="Dokuemntasi Rapat" width="50%"/>
                             @endforeach
@@ -146,15 +146,15 @@
                 <div class="row">
                     <div class="col text-center">
                         <img src="{{ url('foto/logodel.png') }}" alt="logo" width="100px" class="text-center">
-                        <h4>SPMI IT DEL</h4>
+                        <h4>  DEL</h4>
                     </div>
                 </div>
             </div>
             <div class="col-9">
                 <div class="row">
                     <div class="col text-center">
-                        <h1>Notulen Rapat</h1>
-                        <h2>Institut Teknologi Del</h2>
+                        <h1>Procès-verbal de la réunion</h1>
+                        <h2>Institut  Del</h2>
                     </div>
                 </div>
             </div>
@@ -164,12 +164,11 @@
     <div class="footer">
         <hr>
         <p>
-            <strong>Institut Teknologi Del</strong> 
+            <strong>Institut Teknologi Del</strong>
             <br>
-            Jl. Sisingamangaraja, Laguboti 22381 Toba Samosir, Sumatera Utara, Indonesia Telp. (0632) 331234, Fax.: (632) 331116
-            <br>
-            <a href="">info@del.ac.id</a>
-            <a href="www.del.ac.id">www.del.ac.id</a>
+
+            <a href="">info.ac.id</a>
+            <a href="ww.ac.d">.ac.id</a>
         </p>
     </div>
 </body>
