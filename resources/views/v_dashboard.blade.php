@@ -8,7 +8,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="m-0">Undangan Rapat</h5>
+                            <h5 class="m-0">Invitation de réunion
+                            </h5>
                         </div>
                         <div class="card-body">
                                 <table class="table table-sm">

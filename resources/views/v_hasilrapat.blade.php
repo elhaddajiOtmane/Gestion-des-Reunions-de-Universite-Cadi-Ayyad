@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Hasil Rapat')
+@section('title', 'Résultats de la réunion')
 @section('content')
     <div class="card">
         <div class="card-body p-0">

@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Detail Hasil Rapat')
+@section('title', 'Détails des résultats de la réunion')
 @section('content')
     <!-- Default box -->
     <div class="card card-primary">

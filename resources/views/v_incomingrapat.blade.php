@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Detail Jadwal Rapat')
+@section('title', 'Résultats de la réunion')
 @section('content')
     <!-- Default box -->
     <div class="card card-primary">
@@ -64,7 +64,7 @@
                                 <b class="d-block">{{ $leaders->name }}</b>
                             </a>
                         </p>
-                        <p class="text-sm">Notulen
+                        <p class="text-sm">destinataire
                             <a href="/user/{{ $meetings->minuter }}">
                                 <b class="d-block">{{ $notulen->name }}</b>
                             </a>

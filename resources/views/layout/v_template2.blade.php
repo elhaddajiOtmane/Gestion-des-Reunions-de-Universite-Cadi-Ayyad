@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OMENT | @yield('title')</title>
+    <title>meeting management | @yield('title')</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -88,9 +88,9 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="/" class="brand-link">
-                <img src="{{ asset('foto/') }}/nav.png" alt="OMENT" class="brand-image img-circle elevation-3"
+                <img src="{{ asset('foto/') }}/nav.png" alt="meeting management" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">OMENT</span>
+                <span class="brand-text font-weight-light">meeting management</span>
             </a>
 
             <div class="sidebar">
@@ -123,7 +123,8 @@
                                 <a href="/meeting/buatrapat"
                                     class="nav-link {{ request()->is('meeting/buatrapat') ? 'active' : '' }}">
                                     <i class="far fa-plus-square nav-icon"></i>
-                                    <p>Buat Rapat</p>
+
+<p>Créer une réunion</p>
                                 </a>
                             </li>
                         @endif
@@ -131,7 +132,8 @@
                             <a href="/meeting/jadwal" class="nav-link {{ request()->is('meeting/jadwal') || request()->is('meeting/jadwal/*')  ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
-                                    Jadwal
+
+Calendrier
                                 </p>
                             </a>
                         </li>
@@ -139,7 +141,7 @@
                             <a href="/meeting/hasil"
                                 class="nav-link {{ request()->is('meeting/hasil') || request()->is('meeting/hasil/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
-                                <p>Hasil Rapat</p>
+                                <p>Résultats de la réunion</p>
                             </a>
                         </li>
                         {{-- <li class="nav-item">
@@ -183,8 +185,7 @@
 
         </footer>
 
-        <aside class="control-sidebar control-sidebar-dark">
-        </aside>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('template/') }}/plugins/jquery/jquery.min.js"></script>

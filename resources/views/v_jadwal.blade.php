@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Jadwal Rapat')
+@section('title', 'Calendrier des réunions')
 @section('content')
     <div class="card">
         <div class="card-body p-0">

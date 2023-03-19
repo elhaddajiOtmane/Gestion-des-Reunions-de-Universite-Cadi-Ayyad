@@ -1,6 +1,6 @@
 @extends('layout.v_template2')
 
-@section('title', 'Anggota Rapat')
+@section('title', 'Membres de la réunion')
 @section('content')
 {{-- <h1>{{ $anggota->tanggal }}</h1> --}}
 <div class="card">

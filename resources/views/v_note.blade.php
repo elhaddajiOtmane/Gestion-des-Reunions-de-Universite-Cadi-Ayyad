@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Notulensi')
+@section('title', 'Minutes')
 @section('content')
 <div class="row">
     <div class="col-md-12">

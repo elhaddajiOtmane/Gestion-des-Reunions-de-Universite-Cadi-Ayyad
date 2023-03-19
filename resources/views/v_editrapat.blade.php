@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Edit Rapat')
+@section('title', 'Modifier la réunion')
 @section('content')
     <form action="/updateRapat" method="post" enctype="multipart/form-data">
         @csrf

@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Admin',
         ]);
         DB::table('roles')->insert([
-            'nama' => 'Kaprodi',
+            'nama' => 'admin departement',
         ]);
         DB::table('roles')->insert([
-            'nama' => 'Dosen',
+            'nama' => ' user',
         ]);
 
         DB::table('users')->insert([

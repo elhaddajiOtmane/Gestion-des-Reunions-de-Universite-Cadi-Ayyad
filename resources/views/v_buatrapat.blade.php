@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Buat Rapat')
+@section('title', 'Créer une réunion')
 @section('content')
     <form action="/buat-rapat" method="POST" enctype="multipart/form-data">
         @csrf
@@ -37,7 +37,7 @@
                             <input type="text" name="tempat" id="tempat" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="notulen">Notulen</label>
+                            <label for="notulen">destinataire</label>
                             <select id="notulen" name="notulen" class="form-control">
                                     @foreach ($users as $item)
                                         @if (!is_null($meetings))

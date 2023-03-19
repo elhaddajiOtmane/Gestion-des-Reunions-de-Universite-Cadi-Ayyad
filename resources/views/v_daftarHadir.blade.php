@@ -1,6 +1,6 @@
 @extends('layout.v_template2')
 
-@section('title', 'Daftar Hadir')
+@section('title', 'Liste des participants')
 @section('content')
     <div class="card">
         <div class="card-body p-0">
