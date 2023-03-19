@@ -27,39 +27,39 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'admin@oment.com',
+            'email' => 'admin@admin.com',
             'password' => Hash::make('qpwoei123'),
             'foto' => 'Foto2.jpg',
             'role'=>1,
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Fedrick Sulaiman Siagian',
-            'email' => 'superiorsiagian@gmail.com',
+            'name' => 'chef de departement',
+            'email' => 'user4@gmail.com',
             'password' => Hash::make('qpwoei123'),
             'foto' => 'foto.jpg',
             'role'=>2,
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Veronika Marpaung',
-            'email' => 'veronikaomrp@gmail.com',
+            'name' => 'amir ',
+            'email' => 'user3@gmail.com',
             'password' => Hash::make('qpwoei123'),
             'foto' => 'foto.jpg',
             'role'=>3,
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Theresia Tampubolon',
-            'email' => 'tereshajesika@gmail.com',
+            'name' => ' anas',
+            'email' => 'user1@gmail.com',
             'password' => Hash::make('qpwoei123'),
             'foto' => 'foto.jpg',
             'role'=>3,
         ]);
 
         DB::table('users')->insert([
-            'name' => 'David Simatupang',
-            'email' => 'if317049@students.del.ac.id',
+            'name' => ' amir',
+            'email' => 'use@gmail.com',
             'password' => Hash::make('qpwoei123'),
             'foto' => 'foto.jpg',
             'role'=>3,
