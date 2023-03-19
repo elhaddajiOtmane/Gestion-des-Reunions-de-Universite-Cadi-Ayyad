@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Dear Bapa dan Ibu Dosen D3 Teknologi Informasi,</p>
+    <p>Cher Père et Mère Maître de conférences D3 Informatique
+    </p>
     <br>
-    <p>Ini adalah email pemberitahuan akan diadakan rapat dengan deskripsi sebagai berikut :</p>
+    <p>Ceci est un e-mail de notification sera tenu une réunion avec la description suivante :</p>
     <table>
         <tr>
             <td>Judul</td>
@@ -20,7 +21,7 @@
             <td>: {{ $ketua }}</td>
         </tr>
         <tr>
-            <td>Notulis</td>
+            <td>Note</td>
             <td>: {{ $notulis }}</td>
         </tr>
         <tr>
@@ -38,7 +39,7 @@
     </table>
     <br>
     <p>Mohon Bapak dan Ibu membuka kembali sistem untuk mengkonfirmasi kehadiran dengan klik di <a href="http://127.0.0.1:8000">sini</a>. </p>
-    
+
     <br>
     <p>Terima kasih atas perhatian nya.</p>
 </body>
