@@ -28,78 +28,70 @@ use App\Http\Controllers\PdfController;
 
 
 
-Route::get('/',[HomeController::class, 'index'] );
+Route::get('/',[HomeController::class, 'index'])->name('home');
 
-Route::get('/meeting/anggota/{id}', [MeetingController::class, 'anggotaRapat']);
+Route::get('/meeting/anggota/{id}', [MeetingController::class, 'anggotaRapat'])->name('meeting.members');
 
-Route::get('/meeting/hasil',[MeetingController::class, 'hasilRapat'] );
+Route::get('/meeting/hasil',[MeetingController::class, 'hasilRapat'])->name('meeting.results');
 
-Route::get('/meeting/hasil/{id}',[MeetingController::class, 'detailHasilRapat'] );
+Route::get('/meeting/hasil/{id}',[MeetingController::class, 'detailHasilRapat'])->name('meeting.results.details');
 
-Route::get('/meeting/hasil/download/{id}',[MeetingController::class, 'printPdf'] );
+Route::get('/meeting/hasil/download/{id}',[MeetingController::class, 'printPdf'])->name('meeting.results.pdf');
 
-Route::get('/meeting/jadwal',[MeetingController::class, 'jadwalRapat'] );
+Route::get('/meeting/jadwal',[MeetingController::class, 'jadwalRapat'])->name('meeting.schedule');
 
-Route::get('/meeting/jadwal/{id}',[MeetingController::class, 'detailJadwalRapat'] );
+Route::get('/meeting/jadwal/{id}',[MeetingController::class, 'detailJadwalRapat'])->name('meeting.schedule.details');
 
-Route::get('/user/{id}',[UserController::class, 'detail'] );
+Route::get('/user/{id}',[UserController::class, 'detail'])->name('user.details');
 
-Route::get('/user.updateProfile',[UserController::class, 'updateProfile'] );
+Route::get('/user.updateProfile',[UserController::class, 'updateProfile'])->name('user.update.profile');
 
-Route::post('/user/edit/editPassword',[UserController::class, 'editPassword'] );
+Route::post('/user/edit/editPassword',[UserController::class, 'editPassword'])->name('user.edit.password');
 
-Route::post('/user/edit/editProfile',[UserController::class, 'editProfile'] );
+Route::post('/user/edit/editProfile',[UserController::class, 'editProfile'])->name('user.edit.profile');
 
-Route::get('/user/edit/{id}',[UserController::class, 'edit'] );
-
+Route::get('/user/edit/{id}',[UserController::class, 'edit'])->name('user.edit');
 
 Auth::routes();
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/user',[UserController::class, 'index'] );
+    Route::get('/user',[UserController::class, 'index'])->name('admin.users');
 
     // Route::get('/delete/{id}',[UserController::class, 'delete'] );
 
 });
 
-
 Route::middleware(['auth', 'kaprodi'])->group(function () {
-    Route::get('/meeting/buatrapat', [MeetingController::class, 'buatRapat']);
+    Route::get('/meeting/buatrapat', [MeetingController::class, 'buatRapat'])->name('meeting.create');
 
-    Route::get('/meeting/edit/{id}',[MeetingController::class, 'editRapat'] );
+    Route::get('/meeting/edit/{id}',[MeetingController::class, 'editRapat'])->name('meeting.edit');
 
-    Route::get('/meeting/deleteRapat/{id}',[MeetingController::class, 'deleteRapat'] );
+    Route::get('/meeting/deleteRapat/{id}',[MeetingController::class, 'deleteRapat'])->name('meeting.delete');
 
-    Route::post('/buat-rapat',[MeetingController::class, 'createRapat'] );
+    Route::post('/buat-rapat',[MeetingController::class, 'createRapat'])->name('meeting.store');
 
-    Route::post('/updateRapat',[MeetingController::class, 'updateRapat'] );
+    Route::post('/updateRapat',[MeetingController::class, 'updateRapat'])->name('meeting.update');
 
+    Route::get('meeting/hasil/terimaHasilRapat/{id}', [NoteController::class, 'acceptHasilRapat'])->name('note.accept');
 
-    Route::get('meeting/hasil/terimaHasilRapat/{id}', [NoteController::class, 'acceptHasilRapat']);
-
-    Route::post('meeting/hasil/tolakHasilRapat', [NoteController::class, 'rejectHasilRapat']);
+    Route::post('meeting/hasil/tolakHasilRapat', [NoteController::class, 'rejectHasilRapat'])->name('note.reject');
 
 });
 
 
 Route::middleware(['auth', 'dosen'])->group(function () {
-    // Route::get('/absen', [AbsencesController::class, 'index']);
+    Route::get('/absen/buatabsen/{id}', [AbsencesController::class, 'buatAbsensi'])->name('absen.buatabsen');
 
-    Route::get('/absen/buatabsen/{id}', [AbsencesController::class, 'buatAbsensi']);
+    Route::post('/absen/input/{id}', [AbsencesController::class, 'inputAbsensi'])->name('absen.input');
 
-    Route::post('/absen/input/{id}', [AbsencesController::class, 'inputAbsensi']);
+    Route::get('/meeting/notulensi/{id}',[NoteController::class, 'lihatCatatan'])->name('meeting.notulensi');
 
-    Route::get('/meeting/notulensi/{id}',[NoteController::class, 'lihatCatatan'] );
+    Route::post('/meeting/buatNotulensi',[NoteController::class, 'buatCatatan'])->name('meeting.buatNotulensi');
 
-    Route::post('/meeting/buatNotulensi',[NoteController::class, 'buatCatatan'] );
+    Route::get('/undangan/terimaUndangan/{id}', [HomeController::class, 'terimaUndangan'])->name('undangan.terimaUndangan');
 
-    Route::get('/undangan/terimaUndangan/{id}', [HomeController::class, 'terimaUndangan']);
-
-    Route::post('/undangan/tolakUndangan', [HomeController::class, 'tolakUndangan']);
-
+    Route::post('/undangan/tolakUndangan', [HomeController::class, 'tolakUndangan'])->name('undangan.tolakUndangan');
 });
 
