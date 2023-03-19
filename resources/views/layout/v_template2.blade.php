@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('template/') }}/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <link rel="stylesheet" href="{{ asset('template/') }}/plugins/summernote/summernote-bs4.min.css">
     @stack('scripts')
-    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -180,7 +180,7 @@
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
             </div>
-            <strong>Copyright &copy; TA 33TI Kelompok 10</strong> All rights reserved.
+
         </footer>
 
         <aside class="control-sidebar control-sidebar-dark">
@@ -292,7 +292,7 @@
     @stack('custom-scripts')
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-    {!! Toastr::message() !!}    
+    {!! Toastr::message() !!}
 </body>
 
 </html>
