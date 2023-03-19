@@ -7,40 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Dear Bapa dan Ibu Dosen D3 Teknologi Informasi,</p>
+    <p>Chers Bapa dan Ibu Dosen D3 Teknologi Informasi,</p>
     <br>
-    <p>Ini adalah email pemberitahuan bahwa rapat dengan deskripsi sebagai berikut :</p>
+    <p>Ceci est un e-mail de notification pour une réunion avec la description suivante :</p>
     <table>
         <tr>
-            <td>Judul</td>
+            <td>Titre</td>
             <td>: {{ $judul }}</td>
         </tr>
         <tr>
-            <td>Ketua Rapat</td>
+            <td>Président de la Réunion</td>
             <td>: {{ $ketua }}</td>
         </tr>
         <tr>
-            <td>Notulis</td>
+            <td>Secrétaire</td>
             <td>: {{ $notulis }}</td>
         </tr>
         <tr>
-            <td>Tempat</td>
+            <td>Lieu</td>
             <td>: {{ $tempat }}</td>
         </tr>
         <tr>
-            <td>Hari/Tanggal</td>
+            <td>Jour/Date</td>
             <td>: {{\Carbon\Carbon::parse($tanggal)->translatedFormat('l, d F Y')}}</td>
         </tr>
         <tr>
-            <td>Waktu</td>
+            <td>Heure</td>
             <td>: {{ $waktu }}</td>
         </tr>
     </table>
     <br>
-    <p>Memiliki hasil rapat yang sudah dipublish ke sistem Oment.</p>
-    <p>Bapak dan Ibu membuka kembali sistem untuk memerika hasil rapat di <a href="http://127.0.0.1:8000/meeting/hasil/{{ $id }}">sini</a>. </p>
-    
+    <p>Le compte rendu de la réunion a été publié dans le système Oment.</p>
+    <p>Vous pouvez vérifier les résultats de la réunion en ouvrant à nouveau le système <a href="http://127.0.0.1:8000/meeting/hasil/{{ $id }}">ici</a>.</p>
     <br>
-    <p>Terima kasih atas perhatian nya.</p>
+<p>Nous vous remercions pour votre attention.</p>
 </body>
 </html>
