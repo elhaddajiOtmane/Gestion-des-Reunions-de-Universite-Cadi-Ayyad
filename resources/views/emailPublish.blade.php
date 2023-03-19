@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Chers Bapa dan Ibu Dosen D3 Teknologi Informasi,</p>
+    <p>Chers admin dan ,</p>
     <br>
     <p>Ceci est un e-mail de notification pour une réunion avec la description suivante :</p>
     <table>
@@ -37,7 +37,7 @@
         </tr>
     </table>
     <br>
-    <p>Le compte rendu de la réunion a été publié dans le système meeting management.</p>
+    <p>Le compte rendu de la réunion a été publié dans le système gestion des réunions.</p>
     <p>Vous pouvez vérifier les résultats de la réunion en ouvrant à nouveau le système <a href="http://127.0.0.1:8000/meeting/hasil/{{ $id }}">ici</a>.</p>
     <br>
 <p>Nous vous remercions pour votre attention.</p>
