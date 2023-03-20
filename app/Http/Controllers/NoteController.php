@@ -32,8 +32,8 @@ class NoteController extends Controller
                 abort(403);
             }
         }
-        
-        return view('v_note', ['note'=>$note])->with('id', $id);
+
+        return view('note', ['note'=>$note])->with('id', $id);
     }
 
     public function buatCatatan(Request $request){
@@ -49,7 +49,7 @@ class NoteController extends Controller
                 $file = $request->lampiran[$i];
                 $name = $file->getClientOriginalName();
                 $file->move(public_path() . '/dokumentasi/', $name);
-                
+
                 $file = new Documentations();
                 $file->Path = $name;
                 $file->meetings_id = $request->id;
@@ -58,7 +58,7 @@ class NoteController extends Controller
         }
         flash('MoM berhasil dibuat.')->success();
         $home = new MeetingController;
-        
+
         return $home->detailJadwalRapat($request->id);
     }
 
@@ -78,7 +78,7 @@ class NoteController extends Controller
         $notes = notes::firstOrNew(['meetings_id' => $request->id]);
         $notes->status=false;
         $notes->save();
-        
+
         $user = DB::table('meetings')
         ->join('users', 'meetings.minuter', '=', 'users.id')
         ->where('meetings.id', $request->id)

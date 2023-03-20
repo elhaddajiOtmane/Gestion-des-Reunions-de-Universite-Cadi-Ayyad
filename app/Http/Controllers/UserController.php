@@ -24,7 +24,7 @@ class UserController extends Controller
         ->select('users.*', 'roles.nama')
         ->get();
 
-        return view('v_user', ['users' => $users]);
+        return view('utilisateur', ['users' => $users]);
     }
 
     public function detail($id)
@@ -36,7 +36,7 @@ class UserController extends Controller
         $role = DB::table('roles')->where('roles.id', '=', $user->role)->first();
         $meeting = DB::table('meetings')->where('meetings.minuter', '=', $user->id)->get();
 
-        return view('v_userdetail', ['users' => $user, 'roles' => $role, 'meetings' => $meeting]);
+        return view('utilisateur-details', ['users' => $user, 'roles' => $role, 'meetings' => $meeting]);
     }
 
     // public function delete($id)
@@ -46,7 +46,7 @@ class UserController extends Controller
     //     }else{
     //         DB::table('users')->where('id', '=', $id)->delete();
     //     }
-        
+
     //     return $this->index();
     // }
 
@@ -57,14 +57,14 @@ class UserController extends Controller
 
         $user = DB::table('users')->find($id);
 
-        return view('v_edituser', ['user'=>$user]);
+        return view('modifier-utilisateur', ['user'=>$user]);
     }
 
     public function updateProfile()
     {
         $user = DB::table('users')->find(Auth::user()->id);
 
-        return view('v_edituser', ['user'=>$user]);
+        return view('modifier-utilisateur', ['user'=>$user]);
     }
 
     public function editProfile(Request $request){

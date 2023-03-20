@@ -18,7 +18,7 @@ class AbsencesController extends Controller
         ->where('absences.users_id', Auth::user()->id)
         ->where('absences.absen',1)
         ->get();
-        return view('v_daftarHadir', ['meetings' => $meetings]);
+        return view('liste-presences', ['meetings' => $meetings]);
     }
     public function buatAbsensi($id){
         if (!$meetings = DB::table('meetings')->find($id)) {
@@ -29,7 +29,7 @@ class AbsencesController extends Controller
         ->where('meetings_id', $id)
         ->get();
         $meetings = DB::table('meetings')->find($id);
-        return view('v_absen', ['datas'=>$dataDosen, 'meeting'=>$meetings]);
+        return view('absence', ['datas'=>$dataDosen, 'meeting'=>$meetings]);
     }
 
     public function inputAbsensi(Request $request, $id){
@@ -49,10 +49,10 @@ class AbsencesController extends Controller
             ->where('users_id', $request->dataAbsen[$i])
             ->update(['respon' => 2]);
         }
-        
+
         $home = new MeetingController;
 
         flash('Absensi berhasil direkam.')->success();
-        return $home->detailJadwalRapat($request->id); 
+        return $home->detailJadwalRapat($request->id);
     }
 }

@@ -34,7 +34,7 @@ class HomeController extends Controller
         ->where('users_id', Auth::user()->id)
         ->where('respon', NULL)
         ->get();
-        return view('v_dashboard',['undangan'=>$absensi]);
+        return view('dashboard',['undangan'=>$absensi]);
     }
 
     public function terimaUndangan($id){
@@ -43,7 +43,7 @@ class HomeController extends Controller
         ->where('meetings_id', $id)
         ->update(['respon'=>1, 'updated_at'=>now()]);
 
-        return $this->index();        
+        return $this->index();
     }
 
     public function tolakUndangan(Request $request){
@@ -65,6 +65,6 @@ class HomeController extends Controller
 
 
         flash('Undangan telah ditolak.')->error();
-        return $this->index(); 
+        return $this->index();
     }
 }

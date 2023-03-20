@@ -43,7 +43,7 @@ class MeetingController extends Controller
             ->select('meetings.*', 'users.name')
             ->get();
         }
-        return view('v_hasilrapat', ['meetings' => $meetings]);
+        return view('resultat-reunion', ['meetings' => $meetings]);
     }
 
     public function jadwalRapat()
@@ -56,7 +56,7 @@ class MeetingController extends Controller
         ->orderBy('meetings.waktu_mulai', 'desc')
         ->get();
         $now = Carbon::now();
-        return view('v_jadwal', ['meetings' => $meetings, 'now' => $now]);
+        return view('calendrier', ['meetings' => $meetings, 'now' => $now]);
     }
 
     public function buatRapat()
@@ -64,7 +64,7 @@ class MeetingController extends Controller
         $users = DB::table('users')->where('role', '3')
         ->orderBy('name', 'asc')->get();
         $meetings = DB::table('meetings')->latest()->first();
-        return view('v_buatrapat', ['users' => $users, 'meetings' => $meetings]);
+        return view('creer-reunion', ['users' => $users, 'meetings' => $meetings]);
     }
     public function createRapat(Request $request)
     {
@@ -95,7 +95,7 @@ class MeetingController extends Controller
                 $file = $request->lampiran[$i];
                 $name = $file->getClientOriginalName();
                 $file->move(public_path() . '/files/', $name);
-                
+
                 $file = new Attachments();
                 $file->Path = $name;
                 $file->meetings_id = $meetings->id;
@@ -130,7 +130,7 @@ class MeetingController extends Controller
         $dokumentasi = DB::table('documentation')->where('meetings_id', $id)->get();
         $now = Carbon::now();
 
-        return view('v_incomingrapat', ['meetings' => $meetings, 'lampirans' => $lampiran, 'topik' => $topik, 'notulen' => $notulens, 'leaders' => $leaders, 'result' => $result, 'dokumentasi' => $dokumentasi, 'now'=>$now]);
+        return view('reunions-a-venir', ['meetings' => $meetings, 'lampirans' => $lampiran, 'topik' => $topik, 'notulen' => $notulens, 'leaders' => $leaders, 'result' => $result, 'dokumentasi' => $dokumentasi, 'now'=>$now]);
     }
 
     public function detailHasilRapat($id)
@@ -148,7 +148,7 @@ class MeetingController extends Controller
         $result = DB::table('notes')->where('meetings_id', $id)->first();
         $dokumentasi = DB::table('documentation')->where('meetings_id', $id)->get();
 
-        return view('v_hasilrapatdetail', ['meetings' => $meetings, 'lampirans' => $lampiran, 'topik' => $topik, 'notulen' => $notulens, 'leaders' => $leaders, 'result' => $result, 'dokumentasi' => $dokumentasi]);
+        return view('detail-resultat-reunion', ['meetings' => $meetings, 'lampirans' => $lampiran, 'topik' => $topik, 'notulen' => $notulens, 'leaders' => $leaders, 'result' => $result, 'dokumentasi' => $dokumentasi]);
     }
 
     public function deleteRapat($id)
@@ -181,7 +181,7 @@ class MeetingController extends Controller
         $users = DB::table('users')->where('role', '3')->get();
         $topik = DB::table('topics')->join('meetings', 'meetings.id', '=', 'topics.meeting_id')
             ->where('meetings.id', $id)->get();
-        return view('v_editrapat', ['meetings' => $meetings, 'users' => $users]);
+        return view('modifier-reunion', ['meetings' => $meetings, 'users' => $users]);
     }
 
     public function updateRapat(Request $request)
@@ -203,14 +203,14 @@ class MeetingController extends Controller
                 $file = $request->lampiran[$i];
                 $name = $file->getClientOriginalName();
                 $file->move(public_path() . '/files/', $name);
-                
+
                 $file = new Attachments();
                 $file->Path = $name;
                 $file->meetings_id = $request->id;
                 $file->save();
             }
         }
-        
+
         $users = DB::table('users')
         ->where('role', '=', '3')
         ->orderBy('name', 'asc')
@@ -235,7 +235,7 @@ class MeetingController extends Controller
         ->where('absences.meetings_id', $id)
         ->get();
 
-        return view('v_anggotaRapat', ['anggota'=>$anggota]);
+        return view('membres-reunion', ['anggota'=>$anggota]);
     }
 
     public function printPdf($id){
@@ -257,6 +257,6 @@ class MeetingController extends Controller
         ->where('absences.respon', 2)
         ->get();
 
-        return view('mom', ['meeting' => $meetings, 'topik' => $topics, 'notulen' => $notulens, 'leader' => $leaders, 'result' => $results, 'dokumentasi' => $documentations, 'anggota' => $member]);
+        return view('CR-reunion', ['meeting' => $meetings, 'topik' => $topics, 'notulen' => $notulens, 'leader' => $leaders, 'result' => $results, 'dokumentasi' => $documentations, 'anggota' => $member]);
     }
 }
