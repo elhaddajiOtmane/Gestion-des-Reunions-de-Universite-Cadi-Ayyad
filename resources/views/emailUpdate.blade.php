@@ -8,7 +8,7 @@
 </head>
 <br>
 <body>
-    <p>Chers Bapa et Ibu Dosen D3 Teknologi Informasi,</p>
+    <p>Chers admin,</p>
     <p>Ceci est un courriel de notification de changement de programme de réunion avec les détails suivants :</p>
     <table>
         <tr>

@@ -8,7 +8,7 @@
                 <thead>
                     <tr>
                         <th style="width: 1%">
-                            Non
+                            N
                         </th>
                         <th style="width: 30%">
                             titre
