@@ -8,19 +8,19 @@
                 <thead>
                     <tr>
                         <th style="width: 1%">
-                            Non
+                            non
                         </th>
                         <th >
-                            Titre
+                            Givre
                         </th>
                         <th>
-                            Date
+                            date
                         </th>
                         <th>
-                            Temps
+                            Tempérer
                         </th>
                         <th>
-                            Lieuq
+                            Lieu
                         </th>
                         <th class="text-center">
                             liue
