@@ -62,7 +62,7 @@
 
                 <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
                     <div class="text-muted">
-                        <p class="text-sm">Ketua Rapat
+                        <p class="text-sm">Fermer
                             <a href="/user/{{ $meetings->leader }}">
                                 <b class="d-block">{{ $leaders->name }}</b>
                             </a>
