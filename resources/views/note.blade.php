@@ -21,7 +21,7 @@
                 <input type="text" name="id" value="{{ $id }}" hidden>
 
                 <div class="form-group">
-                    <label for="exampleInputFile">Dokumentasi</label>
+                    <label for="exampleInputFile">Documentation</label>
                     <div class="input-group">
                         <div class="custom-file">
                             <input name="lampiran[]" type="file" class="custom-file-input" id="exampleInputFile"
