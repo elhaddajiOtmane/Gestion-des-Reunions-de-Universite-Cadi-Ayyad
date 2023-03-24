@@ -63,7 +63,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 });
 
-Route::middleware(['auth', 'kaprodi'])->group(function () {
+Route::middleware(['auth', 'Responsable'])->group(function () {
     Route::get('/meeting/buatrapat', [MeetingController::class, 'buatRapat'])->name('meeting.create');
 
     Route::get('/meeting/edit/{id}',[MeetingController::class, 'editRapat'])->name('meeting.edit');
@@ -81,7 +81,7 @@ Route::middleware(['auth', 'kaprodi'])->group(function () {
 });
 
 
-Route::middleware(['auth', 'dosen'])->group(function () {
+Route::middleware(['auth', 'Maitreconf'])->group(function () {
     Route::get('/absen/buatabsen/{id}', [AbsencesController::class, 'buatAbsensi'])->name('absen.buatabsen');
 
     Route::post('/absen/input/{id}', [AbsencesController::class, 'inputAbsensi'])->name('absen.input');
