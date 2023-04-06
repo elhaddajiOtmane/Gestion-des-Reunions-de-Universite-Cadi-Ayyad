@@ -73,7 +73,7 @@
         </div>
         <div class="col-12">
             <input type="submit" value="Perbaharui" class="btn btn-warning btn-block">
-            <a href="/meeting/jadwal" class="btn btn-danger btn-block">Annuler</a>
+            <a href="/meeting/jadwal" class="btn btn-danger btn-block">annuler</a>
         </div>
     </form>
 @endsection

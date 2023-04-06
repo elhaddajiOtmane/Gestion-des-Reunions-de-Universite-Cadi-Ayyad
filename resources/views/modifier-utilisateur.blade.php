@@ -60,7 +60,7 @@
                         <form action="/user/edit/editPassword" method="POST" id="editPasswordForm">
                             @csrf
                             <div class="form-group">
-                                <label for="password">Password Long</label>
+                                <label for="password">Mot de passe long</label>
                                 <input type="password" name="password" id="password" class="form-control" required>
                                 @error('password')
                                 <span class="alert-danger" role="alert">
