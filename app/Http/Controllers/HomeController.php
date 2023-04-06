@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Absence;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\izinRapat;
+use App\Mail\preunion;
 
 class HomeController extends Controller
 {
@@ -61,7 +61,7 @@ class HomeController extends Controller
         $user = DB::table('users')
         ->where('id', Auth::user()->id)
         ->first();
-        Mail::to($meeting->email)->send(new izinRapat($user, $meeting, $request->pesan));
+        Mail::to($meeting->email)->send(new preunion($user, $meeting, $request->pesan));
 
 
         flash('Undangan telah ditolak.')->error();
