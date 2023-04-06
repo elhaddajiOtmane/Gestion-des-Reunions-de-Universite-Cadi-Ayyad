@@ -63,7 +63,8 @@
                                             <i class="fas fa-pencil-alt">
                                             </i>
                                         </a>
-                                        <a class="btn btn-danger btn-sm swalDefaultSuccess" data-toggle="tooltip" data-placement="left" title="Hapus Data Rapat" href="/meeting/deleteRapat/{{ $item->id }}" onclick="return confirm('Apakah anda yakin ingin menghapus?')">
+                                        <a class="btn btn-danger btn-sm swalDefaultSuccess" data-toggle="tooltip" data-placement="left" title="Supprimer les données de réunion
+                                        " href="/meeting/delete/{{ $item->id }}" onclick="return confirm('Apakah anda yakin ingin menghapus?')">
                                             <i class="fas fa-trash">
                                             </i>
                                         </a>

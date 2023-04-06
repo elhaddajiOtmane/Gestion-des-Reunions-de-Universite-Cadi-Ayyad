@@ -2,7 +2,7 @@
 
 @section('title', 'Modifier la réunion')
 @section('content')
-    <form action="/updateRapat" method="post" enctype="multipart/form-data">
+    <form action="/meetingupdate" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-md-12">

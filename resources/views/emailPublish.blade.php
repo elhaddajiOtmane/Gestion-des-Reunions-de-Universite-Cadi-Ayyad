@@ -38,7 +38,7 @@
     </table>
     <br>
     <p>Le compte rendu de la réunion a été publié dans le système gestion des réunions.</p>
-    <p>Vous pouvez vérifier les résultats de la réunion en ouvrant à nouveau le système <a href="http://127.0.0.1:8000/meeting/hasil/{{ $id }}">ici</a>.</p>
+    <p>Vous pouvez vérifier les résultats de la réunion en ouvrant à nouveau le système <a href="http://127.0.0.1:8000/reunion/resultats/{{ $id }}">ici</a>.</p>
     <br>
 <p>Nous vous remercions pour votre attention.</p>
 </body>

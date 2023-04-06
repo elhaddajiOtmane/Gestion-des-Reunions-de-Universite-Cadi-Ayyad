@@ -27,12 +27,26 @@ use App\Http\Controllers\PdfController;
 ;
 
 
+// '/' => '/',
+// '/meeting/anggota/{id}' => '/reunion/membre/{id}',
+// '/meeting/hasil' => '/reunion/resultats',
+// '/meeting/hasil/{id}' => '/reunion/resultats/{id}',
+// '/meeting/hasil/download/{id}' => '/reunion/resultats/telecharger/{id}',
+// '/meeting/jadwal' => '/reunion/horaire',
+// '/meeting/jadwal/{id}' => '/reunion/horaire/{id}',
+// '/user/{id}' => '/utilisateur/{id}',
+// '/user.updateProfile' => '/utilisateur/modifier/profil',
+// '/user/edit/editPassword' => '/utilisateur/modifier/motdepasse',
+// '/user/edit/editProfile' => '/utilisateur/modifier/profil',
+// '/user/edit/{id}' => '/utilisateur/modifier/{id}'
+
+
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
 
 Route::get('/meeting/anggota/{id}', [MeetingController::class, 'anggotaRapat'])->name('meeting.members');
 
-Route::get('/meeting/hasil',[MeetingController::class, 'hasilRapat'])->name('meeting.results');
+Route::get('/reunion/resultats',[MeetingController::class, 'hasilRapat'])->name('meeting.results');
 
 Route::get('/meeting/hasil/{id}',[MeetingController::class, 'detailHasilRapat'])->name('meeting.results.details');
 
@@ -68,11 +82,11 @@ Route::middleware(['auth', 'Responsable'])->group(function () {
 
     Route::get('/meeting/edit/{id}',[MeetingController::class, 'editRapat'])->name('meeting.edit');
 
-    Route::get('/meeting/deleteRapat/{id}',[MeetingController::class, 'deleteRapat'])->name('meeting.delete');
+    Route::get('/meeting/delete/{id}',[MeetingController::class, 'deleteRapat'])->name('meeting.delete');
 
-    Route::post('/buat-rapat',[MeetingController::class, 'createRapat'])->name('meeting.store');
+    Route::post('/meeting-store',[MeetingController::class, 'createRapat'])->name('meeting.store');
 
-    Route::post('/updateRapat',[MeetingController::class, 'updateRapat'])->name('meeting.update');
+    Route::post('/meetingupdate',[MeetingController::class, 'updateRapat'])->name('meeting.update');
 
     Route::get('meeting/hasil/terimaHasilRapat/{id}', [NoteController::class, 'acceptHasilRapat'])->name('note.accept');
 
