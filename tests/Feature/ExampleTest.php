@@ -13,11 +13,12 @@ class ExampleTest extends TestCase
      * @return void
      */
     public function testBasicTest()
-    {
-        $response = $this->get('/')
-        ->followRedirects()
-        ->assertStatus(200);
-    }
+{
+    $response = $this->get('/');
+
+    $response->assertStatus(302);
+    $response->assertRedirect('/login');
+}
 }
 
 
