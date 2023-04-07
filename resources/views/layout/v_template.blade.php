@@ -128,7 +128,7 @@
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a href="/meeting/jadwal" class="nav-link {{ request()->is('meeting/jadwal') || request()->is('meeting/jadwal/*')  ? 'active' : '' }}">
+                            <a href="/reunion/horaire" class="nav-link {{ request()->is('reunion/horaire') || request()->is('reunion/horaire/*')  ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Calendrier
