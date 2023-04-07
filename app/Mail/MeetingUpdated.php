@@ -18,23 +18,23 @@ class MeetingUpdated extends Mailable implements ShouldQueue
      *
      * @return void
      */
-    public $judul;
-    public $ketua;
-    public $notulis;
-    public $tanggal;
-    public $waktu;
-    public $tempat;
+    public $titre;
+    public $chef;
+    public $prnotes;
+    public $date;
+    public $temps;
+    public $lieu;
 
     public function __construct(Meeting $meetings)
     {
         $ketuaRapat = DB::table('users')->where('id', $meetings->leader)->first();
         $notulisRapat = DB::table('users')->where('id', $meetings->minuter)->first();
-        $this->judul = $meetings->title;
-        $this->tanggal = $meetings->tanggal;
-        $this->waktu = $meetings->waktu_mulai;
-        $this->tempat = $meetings->place;
-        $this->ketua = $ketuaRapat->name;
-        $this->notulis = $notulisRapat->name;
+        $this->titre = $meetings->title;
+        $this->date = $meetings->date;
+        $this->temps = $meetings->waktu_mulai;
+        $this->lieu = $meetings->place;
+        $this->chef = $ketuaRapat->name;
+        $this->prnotes = $notulisRapat->name;
     }
 
     /**
@@ -44,16 +44,16 @@ class MeetingUpdated extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->from('omentdel@gmail.com')
+        return $this->from('salma@gmail.com')
                     ->view('emailUpdate')
                     ->with(
                      [
-                         'judul' => $this->judul,
-                         'tanggal' => $this->tanggal,
-                         'waktu' => $this->waktu,
-                         'tempat' => $this->tempat,
-                         'ketua' => $this->ketua,
-                         'notulis' => $this->notulis,
+                         'titre' => $this->titre,
+                         'date' => $this->date,
+                         'temps' => $this->temps,
+                         'lieu' => $this->lieu,
+                         'chef' => $this->chef,
+                         'prnotes' => $this->prnotes,
                      ]);
     }
 }
