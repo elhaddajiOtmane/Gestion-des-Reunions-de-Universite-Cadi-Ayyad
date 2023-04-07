@@ -111,7 +111,7 @@ class MeetingController extends Controller
             $absence->save();
         }
 
-        flash('Rapat berhasil dibuat.')->success();
+        flash('Réunion créée avec succès..')->success();
         return $this->jadwalRapat();
     }
     public function detailJadwalRapat($id)
@@ -158,14 +158,14 @@ class MeetingController extends Controller
         }
         DB::table('meetings')->delete($id);
 
-        flash('Rapat telah dihapus.')->error();
+        flash('La réunion a été supprimée  .')->error();
         return $this->jadwalRapat();
     }
 
     public function editRapat($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
-            flash('Maaf, rapat tidak ditemukan.')->error();
+            flash('Désolé, réunion introuvable      .')->error();
             return back();
         }
 
@@ -174,7 +174,8 @@ class MeetingController extends Controller
 
         if ($meetings->tanggal <= $now) {
             if ($meetings->waktu_mulai <= $now) {
-                flash('Maaf, rapat yang dipilih telah berlangsung.');
+                flash('Désolé, la réunion sélectionnée a déjà eu lieu.
+                ');
                 return back();
             }
         }
@@ -223,7 +224,7 @@ class MeetingController extends Controller
             Mail::to($item->email)->send(new MeetingUpdated($meetings));
             $absence->save();
         }
-        flash('Rapat berhasil diperbaharui.')->warning();
+        flash('La réunion a été mise à jour avec succèe   .')->warning();
         return $this->jadwalRapat();
     }
 
