@@ -48,13 +48,13 @@ Route::get('/meeting/anggota/{id}', [MeetingController::class, 'anggotaRapat'])-
 
 Route::get('/reunion/resultats',[MeetingController::class, 'hasilRapat'])->name('meeting.results');
 
-Route::get('/meeting/hasil/{id}',[MeetingController::class, 'detailHasilRapat'])->name('meeting.results.details');
+Route::get('/meeting/resultats/{id}',[MeetingController::class, 'detailHasilRapat'])->name('meeting.results.details');
 
 Route::get('/meeting/hasil/download/{id}',[MeetingController::class, 'printPdf'])->name('meeting.results.pdf');
 
-Route::get('/meeting/jadwal',[MeetingController::class, 'jadwalRapat'])->name('meeting.schedule');
+Route::get('/reunion/horaire',[MeetingController::class, 'jadwalRapat'])->name('meeting.schedule');
 
-Route::get('/meeting/jadwal/{id}',[MeetingController::class, 'detailJadwalRapat'])->name('meeting.schedule.details');
+Route::get('/reunion/horaire/{id}',[MeetingController::class, 'detailJadwalRapat'])->name('meeting.schedule.details');
 
 Route::get('/user/{id}',[UserController::class, 'detail'])->name('user.details');
 
