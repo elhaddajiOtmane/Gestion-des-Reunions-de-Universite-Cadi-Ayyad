@@ -19,7 +19,7 @@ class Responsable
         if (auth()->user()->role==2) {
             return $next($request);
         }
-        
+
         return redirect('/');
     }
 }
