@@ -78,7 +78,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'Responsable'])->group(function () {
-    Route::get('/meeting/buatrapat', [MeetingController::class, 'buatRapat'])->name('meeting.create');
+    Route::get('/reunion/create', [MeetingController::class, 'buatRapat'])->name('meeting.create');
 
     Route::get('/meeting/edit/{id}',[MeetingController::class, 'editRapat'])->name('meeting.edit');
 
