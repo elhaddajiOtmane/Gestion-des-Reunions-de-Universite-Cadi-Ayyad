@@ -97,7 +97,7 @@
                         @endif>Catatan</button></a>
                         <a href="/absen/buatabsen/{{ $meetings->id }}"><button class="btn btn-sm btn-warning" @if($now->toDateTimeString()<=$meetings->tanggal.' '.$meetings->waktu_mulai)
                             disabled
-                        @endif>Absensi</button></a>
+                        @endif>absence</button></a>
                     @endif
                 </div>
             </div>
@@ -110,7 +110,8 @@
     @if (!is_null($result) && Auth::user()->id==$meetings->minuter)
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title">Hasil Rapat</h3>
+            <h3 class="card-title">Résultats de la réunion
+            </h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i></button>
             </div>
@@ -124,14 +125,15 @@
     @if (!is_null($dokumentasi))
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title">Dokumentasi Rapat</h3>
+            <h3 class="card-title">Documents de réunion
+            </h3>
         </div>
         <div class="card-body">
             <div class="row">
                 @foreach ($dokumentasi as $item)
                 <div class="col-sm-2">
                   <a href="{{ url('dokumentasi/' . $item->Path) }}" data-toggle="lightbox" data-title="Dokumentasi" data-gallery="gallery">
-                    <img src="{{ url('dokumentasi/' . $item->Path) }}" class="img-fluid mb-2" alt="Dokuemntasi Rapat"/>
+                    <img src="{{ url('dokumentasi/' . $item->Path) }}" class="img-fluid mb-2" alt=""/>
                   </a>
                 </div>
                 @endforeach

@@ -27,7 +27,7 @@
           <!-- /.col -->
           <div class="col-sm-4 border-right">
             <div class="description-block">
-              <h5 class="description-header">Jabatan</h5>
+              <h5 class="description-header">Département</h5>
               <span>{{ $roles->nama }}</span>
             </div>
             <!-- /.description-block -->

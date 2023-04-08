@@ -138,7 +138,7 @@ Calendrier
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/meeting/hasil"
+                            <a href="reunion/resultats"
                                 class="nav-link {{ request()->is('meeting/hasil') || request()->is('meeting/hasil/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
                                 <p>Résultats de la réunion</p>

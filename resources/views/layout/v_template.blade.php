@@ -29,9 +29,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-
+{{-- makeing notfcation in progress --}}
             <ul class="navbar-nav ml-auto">
-                {{-- <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
                         <span class="badge badge-warning navbar-badge">3</span>
@@ -46,7 +46,7 @@
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
-                </li> --}}
+                </li>
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ url('foto/' . Auth::user()->foto) }}" class="user-image img-circle elevation-2"
@@ -128,7 +128,7 @@
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a href="/meeting/jadwal" class="nav-link {{ request()->is('meeting/jadwal') || request()->is('meeting/jadwal/*')  ? 'active' : '' }}">
+                            <a href="/reunion/horaire" class="nav-link {{ request()->is('reunion/horaire') || request()->is('reunion/horaire/*')  ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Calendrier
@@ -136,19 +136,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/meeting/hasil"
-                                class="nav-link {{ request()->is('meeting/hasil') || request()->is('meeting/hasil/*') ? 'active' : '' }}">
+                            <a href="/reunion/resultats"
+                                class="nav-link {{ request()->is('reunion/resultats') || request()->is('reunion/resultats/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
                                 <p>Résultats de la réunion</p>
                             </a>
                         </li>
-                        {{-- <li class="nav-item">
-                            <a href="/absen" class="nav-link">
-                                <i class="far fas fa-book nav-icon"></i>
-<p>Capacité</p>
 
-                            </a>
-                        </li> --}}
                     </ul>
                 </nav>
             </div>
@@ -214,7 +208,7 @@
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
-                // "buttons": ["copy", "csv", "excel", "pdf", "print"]
+
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
                 "paging": true,
@@ -232,24 +226,24 @@
         });
 
         $(document).ready(function() {
-            var maxField = 8; //Input fields increment limitation
-            var addButton = $('.add_button'); //Add button selector
-            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var maxField = 8;
+            var addButton = $('.add_button');
+            var wrapper = $('.field_wrapper');
             var fieldHTML =
                 '<div style="padding-top:5px; display:flex;"><input type="text" id="judul1" name="field_name[]" class="form-control nn" style="flex:1;"><a href="javascript:void(0);" class="remove_button btn btn-danger">X</a></div>';
-            var x = 1; //Initial field counter is 1
+            var x = 1;
 
             $(addButton).click(function() {
                 if (x < maxField) {
-                    x++; //Increment field counter
-                    $(wrapper).append(fieldHTML); //Add field html
+                    x++;
+                    $(wrapper).append(fieldHTML);
                 }
             });
 
             $(wrapper).on('click', '.remove_button', function(e) {
                 e.preventDefault();
-                $(this).parent('div').remove(); //Remove field html
-                x--; //Decrement field counter
+                $(this).parent('div').remove(); /
+                x--;
             });
         });
 

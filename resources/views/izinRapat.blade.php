@@ -64,7 +64,7 @@
             <td>: {{ $waktu }}</td>
         </tr>
     </table>
-<p>Pour plus d'informations sur les membres de la réunion, veuillez consulter <a href="http://127.0.0.1:8000/meeting/jadwal/{{ $id }}">ici</a>. </p>
+<p>Pour plus d'informations sur les membres de la réunion, veuillez consulter <a href="http://127.0.0.1:8000/reunion/horaire/{{ $id }}">ici</a>. </p>
 <p>Merci de votre attention.</p>
 </body>
 </html>

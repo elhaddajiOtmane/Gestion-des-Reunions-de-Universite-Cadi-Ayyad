@@ -52,7 +52,7 @@
                                 {{ $item->name }}
                             </td>
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="/meeting/jadwal/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Rapat">
+                                <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Rapat">
                                     <i class="fas fa-eye">
                                     </i>
                                 </a>
