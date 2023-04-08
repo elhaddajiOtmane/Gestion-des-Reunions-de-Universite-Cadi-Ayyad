@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="{{ asset('template/') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('template/') }}/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <link rel="stylesheet" href="{{ asset('template/') }}/plugins/summernote/summernote-bs4.min.css">
-
     @stack('scripts')
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -29,9 +29,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-{{-- makeing notfcation in progress --}}
+
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
                         <span class="badge badge-warning navbar-badge">3</span>
@@ -46,7 +46,7 @@
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
-                </li>
+                </li> --}}
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ url('foto/' . Auth::user()->foto) }}" class="user-image img-circle elevation-2"
@@ -118,31 +118,38 @@
                                 </a>
                             </li>
                         @endif
-                        @if (auth()->user()->role == 2)
+                        @if (auth()->user()->role <= 2)
                             <li class="nav-item">
-                                <a href="/meeting/buatrapat"
-                                    class="nav-link {{ request()->is('meeting/buatrapat') ? 'active' : '' }}">
+                                <a href="/reunion/create"
+                                    class="nav-link {{ request()->is('reunion/create') ? 'active' : '' }}">
                                     <i class="far fa-plus-square nav-icon"></i>
-                                    <p>Créer une réunion</p>
+
+<p>Créer une réunion</p>
                                 </a>
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a href="/reunion/horaire" class="nav-link {{ request()->is('reunion/horaire') || request()->is('reunion/horaire/*')  ? 'active' : '' }}">
+                            <a href="/meeting/jadwal" class="nav-link {{ request()->is('meeting/jadwal') || request()->is('meeting/jadwal/*')  ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
-                                    Calendrier
+
+Calendrier
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/reunion/resultats"
-                                class="nav-link {{ request()->is('reunion/resultats') || request()->is('reunion/resultats/*') ? 'active' : '' }}">
+                            <a href="reunion/resultats"
+                                class="nav-link {{ request()->is('meeting/hasil') || request()->is('meeting/hasil/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
                                 <p>Résultats de la réunion</p>
                             </a>
                         </li>
-
+                        {{-- <li class="nav-item">
+                            <a href="/absen" class="nav-link">
+                                <i class="far fas fa-book nav-icon"></i>
+                                <p>Absensi</p>
+                            </a>
+                        </li> --}}
                     </ul>
                 </nav>
             </div>
@@ -166,8 +173,7 @@
             </section>
 
             <section class="content">
-                @include('flash::message')
-
+                @include('sweetalert::alert')
                 @yield('content')
 
             </section>
@@ -208,7 +214,7 @@
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
-
+                "buttons": ["copy", "csv", "excel", "pdf", "print"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
                 "paging": true,
@@ -226,24 +232,24 @@
         });
 
         $(document).ready(function() {
-            var maxField = 8;
-            var addButton = $('.add_button');
-            var wrapper = $('.field_wrapper');
+            var maxField = 8; //Input fields increment limitation
+            var addButton = $('.add_button'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
             var fieldHTML =
                 '<div style="padding-top:5px; display:flex;"><input type="text" id="judul1" name="field_name[]" class="form-control nn" style="flex:1;"><a href="javascript:void(0);" class="remove_button btn btn-danger">X</a></div>';
-            var x = 1;
+            var x = 1; //Initial field counter is 1
 
             $(addButton).click(function() {
                 if (x < maxField) {
-                    x++;
-                    $(wrapper).append(fieldHTML);
+                    x++; //Increment field counter
+                    $(wrapper).append(fieldHTML); //Add field html
                 }
             });
 
             $(wrapper).on('click', '.remove_button', function(e) {
                 e.preventDefault();
-                $(this).parent('div').remove(); /
-                x--;
+                $(this).parent('div').remove(); //Remove field html
+                x--; //Decrement field counter
             });
         });
 
@@ -285,6 +291,9 @@
         })
     </script>
     @stack('custom-scripts')
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
 </body>
 
 </html>

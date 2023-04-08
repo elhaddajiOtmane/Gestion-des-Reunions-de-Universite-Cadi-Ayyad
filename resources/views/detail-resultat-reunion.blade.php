@@ -1,4 +1,4 @@
-@extends('layout.v_template')
+@extends('layout.template')
 
 @section('title', 'Détails des résultats de la réunion')
 @section('content')

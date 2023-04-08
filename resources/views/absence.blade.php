@@ -1,4 +1,4 @@
-@extends('layout.v_template2')
+@extends('layout.template2')
 
 @section('title', 'Absen')
 @section('content')

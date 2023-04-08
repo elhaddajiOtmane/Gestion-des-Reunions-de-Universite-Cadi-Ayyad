@@ -1,4 +1,4 @@
-@extends('layout.v_template')
+@extends('layout.template')
 
 @section('title', 'Dashboard')
 @section('content')
