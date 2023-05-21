@@ -2,7 +2,7 @@
 
 @section('title', 'Membres de la réunion')
 @section('content')
-{{-- <h1>{{ $anggota->tanggal }}</h1> --}}
+{{-- <h1>{{ $anggota->la date }}</h1> --}}
 <div class="card">
     <div class="card-body p-0">
         <table id="example1" class="table table-striped projects">

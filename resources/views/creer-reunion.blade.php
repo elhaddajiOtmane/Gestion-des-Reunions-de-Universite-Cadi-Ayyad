@@ -21,7 +21,7 @@
                             <input type="textarea" name="judul" id="judul" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="tanggal">Date</label>
+                            <label for="la date">Date</label>
                             <input type="date" name="tanggal" id="tanggal" class="form-control" required>
                         </div>
                         <div class="form-group">

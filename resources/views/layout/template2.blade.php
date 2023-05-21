@@ -129,7 +129,7 @@
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a href="/meeting/jadwal" class="nav-link {{ request()->is('meeting/jadwal') || request()->is('meeting/jadwal/*')  ? 'active' : '' }}">
+                            <a href="/reunion/horaire" class="nav-link {{ request()->is('reunion/horaire') || request()->is('reunion/horaire/*')  ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
 
@@ -138,8 +138,8 @@ Calendrier
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="reunion/resultats"
-                                class="nav-link {{ request()->is('meeting/hasil') || request()->is('meeting/hasil/*') ? 'active' : '' }}">
+                            <a href="/reunion/resultats"
+                                class="nav-link {{ request()->is('/reunion/resultats') || request()->is('/reunion/resultats/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
                                 <p>Résultats de la réunion</p>
                             </a>

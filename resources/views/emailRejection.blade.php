@@ -39,7 +39,7 @@
     <br>
     <p>Le président du département n'a pas approuvé la publication de ce résultat de réunion, avec le commentaire suivant :</p>
     <p>"{{ $pesan }}"</p>
-    <p>Nous vous prions de bien vouloir ouvrir à nouveau le système pour corriger le résultat de la réunion à l'adresse suivante : <a href="http://127.0.0.1:8000/meeting/jadwal/{{ $id }}">ici</a>. </p>
+    <p>Nous vous prions de bien vouloir ouvrir à nouveau le système pour corriger le résultat de la réunion à l'adresse suivante : <a href="http://127.0.0.1:8000/reunion/horaire/{{ $id }}">ici</a>. </p>
 
     <br>
     <p>Nous vous remercions pour votre attention.</p>

@@ -7,9 +7,9 @@
 <a href="/user.updateProfile" class="btn btn-sm btn-warning mb-1">Edit</a>
 @endif
 <div>
-    <!-- Widget: user widget style 1 -->
+
     <div class="card card-widget widget-user">
-      <!-- Add the bg color to the header using any of the bg-* classes -->
+
       <div class="widget-user-header bg-info">
         <h3 class="widget-user-username">{{ $users->name }}</h3>
         <h5 class="widget-user-desc">{{ $users->email }}</h5>
@@ -30,20 +30,20 @@
               <h5 class="description-header">Département</h5>
               <span>{{ $roles->nama }}</span>
             </div>
-            <!-- /.description-block -->
+
           </div>
           <!-- /.col -->
           <div class="col-sm-4">
             <div class="description-block">
             </div>
-            <!-- /.description-block -->
+
           </div>
-          <!-- /.col -->
+
         </div>
-        <!-- /.row -->
+
       </div>
     </div>
-    <!-- /.widget-user -->
+
   </div>
   <div class="card">
     <div class="card-body p-0">

@@ -23,7 +23,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">Waktu</span>
+                                    <span class="info-box-text text-center text-muted">tiem</span>
                                     <span
                                         class="info-box-number text-center text-muted mb-0">{{ $meetings->waktu_mulai }}</span>
                                 </div>
@@ -32,7 +32,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">temp</span>
+                                    <span class="info-box-text text-center text-muted">le lieu</span>
                                     <span
                                         class="info-box-number text-center text-muted mb-0">{{ $meetings->place }}</span>
                                 </div>

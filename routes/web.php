@@ -50,7 +50,7 @@ Route::get('/reunion/resultats',[MeetingController::class, 'hasilRapat'])->name(
 
 Route::get('/meeting/resultats/{id}',[MeetingController::class, 'detailHasilRapat'])->name('meeting.results.details');
 
-Route::get('/meeting/hasil/download/{id}',[MeetingController::class, 'printPdf'])->name('meeting.results.pdf');
+Route::get('/reunion/resultats/download/{id}',[MeetingController::class, 'printPdf'])->name('meeting.results.pdf');
 
 Route::get('/reunion/horaire',[MeetingController::class, 'jadwalRapat'])->name('meeting.schedule');
 
@@ -88,9 +88,9 @@ Route::middleware(['auth', 'Responsable'])->group(function () {
 
     Route::post('/meetingupdate',[MeetingController::class, 'updateRapat'])->name('meeting.update');
 
-    Route::get('meeting/hasil/terimaHasilRapat/{id}', [NoteController::class, 'acceptHasilRapat'])->name('note.accept');
+    Route::get('reunion/resultats/terimaHasilRapat/{id}', [NoteController::class, 'acceptHasilRapat'])->name('note.accept');
 
-    Route::post('meeting/hasil/tolakHasilRapat', [NoteController::class, 'rejectHasilRapat'])->name('note.reject');
+    Route::post('reunion/resultats/tolakHasilRapat', [NoteController::class, 'rejectHasilRapat'])->name('note.reject');
 
 });
 

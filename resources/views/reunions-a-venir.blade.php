@@ -1,4 +1,4 @@
-@extends('layout.v_template')
+@extends('layout.template')
 
 @section('title', 'Résultats de la réunion')
 @section('content')
@@ -14,7 +14,8 @@
                         <div class="col-12 col-sm-4">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">Tanggal</span>
+                                    <span class="info-box-text text-center text-muted">
+                                        Date</span>
                                     <span
                                         class="info-box-number text-center text-muted mb-0">{{ $meetings->tanggal }}</span>
                                 </div>
@@ -23,7 +24,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">Waktu</span>
+                                    <span class="info-box-text text-center text-muted">Date</span>
                                     <span
                                         class="info-box-number text-center text-muted mb-0">{{ $meetings->waktu_mulai }}</span>
                                 </div>
@@ -32,7 +33,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="info-box bg-light">
                                 <div class="info-box-content">
-                                    <span class="info-box-text text-center text-muted">Tempat</span>
+                                    <span class="info-box-text text-center text-muted">le lieu</span>
                                     <span
                                         class="info-box-number text-center text-muted mb-0">{{ $meetings->place }}</span>
                                 </div>

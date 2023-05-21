@@ -136,8 +136,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/reunion/resultats"
-                                class="nav-link {{ request()->is('reunion/resultats') || request()->is('reunion/resultats/*') ? 'active' : '' }}">
+                            <a href="//reunion/resultats"
+                                class="nav-link {{ request()->is('/reunion/resultats') || request()->is('/reunion/resultats/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
                                 <p>Résultats de la réunion</p>
                             </a>
