@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon; 
+use Illuminate\Support\Carbon;
 
 class Meeting extends Model
 {
@@ -15,9 +15,9 @@ class Meeting extends Model
 
     protected $fillable = [
         'title',
-        'tanggal',
-        'waktu_mulai',
-        'waktu_akhir',
+        'date',
+        'end_time',
+        'end_time',
         'place',
         'leader',
         'minuter',
@@ -26,6 +26,6 @@ class Meeting extends Model
     ];
 
     // public function getTanggaAtribute(){
-    //     return Carbon::parse($this->attributes['tanggal'])->translatedFormat('l, d F Y');
+    //     return Carbon::parse($this->attributes['date'])->translatedFormat('l, d F Y');
     // }
 }

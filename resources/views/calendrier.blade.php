@@ -23,7 +23,7 @@
                             Lieu
                         </th>
                         <th style="width: 20%" class="text-center">
-                            Lieu
+                            distinatire
                         </th>
                         <th style="width: 20%">
                         </th>
@@ -40,10 +40,10 @@
                                 {{ $item->title }}
                             </td>
                             <td class="text-center">
-                                {{ $item->tanggal }}
+                                {{ $item->date }}
                             </td>
                             <td class="text-center">
-                                {{ $item->waktu_mulai }}
+                                {{ $item->end_time }}
                             </td>
                             <td class="text-center">
                                 {{ $item->place }}
@@ -58,7 +58,7 @@
                                 </a>
 
                                 @if (auth()->user()->role == 2)
-                                    @if ($now->toDateTimeString() < $item->tanggal.' '.$item->waktu_mulai)
+                                    @if ($now->toDateTimeString() < $item->date.' '.$item->end_time)
                                         <a class="btn btn-info btn-sm" href="/meeting/edit/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Edit Data Rapat">
                                             <i class="fas fa-pencil-alt">
                                             </i>

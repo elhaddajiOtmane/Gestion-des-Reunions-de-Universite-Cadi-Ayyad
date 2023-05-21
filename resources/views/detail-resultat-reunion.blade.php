@@ -16,7 +16,7 @@
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">Date</span>
                                     <span
-                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->tanggal }}</span>
+                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->date }}</span>
                                 </div>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">tiem</span>
                                     <span
-                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->waktu_mulai }}</span>
+                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->end_time }}</span>
                                 </div>
                             </div>
                         </div>

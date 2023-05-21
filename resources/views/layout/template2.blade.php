@@ -264,7 +264,7 @@ Calendrier
 
         function saveData() {
             var judul = document.getElementById("judul").value;
-            var tanggal = document.getElementById("tanggal").value;
+            var date = document.getElementById("date").value;
             var mulai = document.getElementById("mulai").value;
             var berakhir = document.getElementById("berakhir").value;
             var tempat = document.getElementById("tempat").value;

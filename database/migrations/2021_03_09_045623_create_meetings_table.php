@@ -16,9 +16,9 @@ class CreateMeetingsTable extends Migration
         Schema::create('meetings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->date('tanggal');
-            $table->time('waktu_mulai', $precision = 0);
-            $table->time('waktu_akhir', $precision = 0)->nullable;
+            $table->date('date');
+            $table->time('start_time', $precision = 0);
+            $table->time('end_time', $precision = 0)->nullable;
             $table->string('place');
             $table->foreignId('leader')->constrained('users');
             $table->foreignId('minuter')->constrained('users');

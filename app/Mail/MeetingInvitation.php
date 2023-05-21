@@ -22,7 +22,7 @@ class MeetingInvitation extends Mailable implements ShouldQueue
     public $judul;
     public $ketua;
     public $notulis;
-    public $tanggal;
+    public $date;
     public $waktu;
     public $tempat;
 
@@ -31,8 +31,8 @@ class MeetingInvitation extends Mailable implements ShouldQueue
         $ketuaRapat = DB::table('users')->where('id', $meetings->leader)->first();
         $notulisRapat = DB::table('users')->where('id', $meetings->minuter)->first();
         $this->judul = $meetings->title;
-        $this->tanggal = $meetings->tanggal;
-        $this->waktu = $meetings->waktu_mulai;
+        $this->date = $meetings->date;
+        $this->waktu = $meetings->end_time;
         $this->tempat = $meetings->place;
         $this->ketua = $ketuaRapat->name;
         $this->notulis = $notulisRapat->name;
@@ -50,7 +50,7 @@ class MeetingInvitation extends Mailable implements ShouldQueue
                     ->with(
                      [
                          'judul' => $this->judul,
-                         'tanggal' => $this->tanggal,
+                         'date' => $this->date,
                          'waktu' => $this->waktu,
                          'tempat' => $this->tempat,
                          'ketua' => $this->ketua,

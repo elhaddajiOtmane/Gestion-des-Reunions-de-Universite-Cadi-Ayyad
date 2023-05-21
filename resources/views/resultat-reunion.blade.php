@@ -40,10 +40,10 @@
                                 {{ $item->title }}
                             </td>
                             <td class="text-center">
-                                {{ $item->tanggal }}
+                                {{ $item->date }}
                             </td>
                             <td class="text-center">
-                                {{ $item->waktu_mulai }}
+                                {{ $item->end_time }}
                             </td>
                             <td class="text-center">
                                 {{ $item->place }}
@@ -52,7 +52,7 @@
                                 {{ $item->name }}
                             </td>
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="//reunion/resultats/{{ $item->id }}" data-placement="left" title="Lihat Data Hasil Rapat">
+                                <a class="btn btn-primary btn-sm" href="/reunion/resultats/{{ $item->id }}" data-placement="left" title="Lihat Data Hasil Rapat">
                                     <i class="fas fa-folder">
                                     </i>
                                 </a>

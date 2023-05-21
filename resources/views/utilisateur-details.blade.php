@@ -81,10 +81,10 @@
                     {{ $item->title }}
                 </td>
                 <td>
-                    {{ $item->tanggal }}
+                    {{ $item->date }}
                 </td>
                 <td>
-                    {{ $item->waktu_mulai }}
+                    {{ $item->end_time }}
                 </td>
                 <td>
                     {{ $item->place }}

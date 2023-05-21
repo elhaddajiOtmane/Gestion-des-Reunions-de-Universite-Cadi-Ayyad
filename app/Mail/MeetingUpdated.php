@@ -31,7 +31,7 @@ class MeetingUpdated extends Mailable implements ShouldQueue
         $notulisRapat = DB::table('users')->where('id', $meetings->minuter)->first();
         $this->titre = $meetings->title;
         $this->date = $meetings->date;
-        $this->temps = $meetings->waktu_mulai;
+        $this->temps = $meetings->end_time;
         $this->lieu = $meetings->place;
         $this->chef = $ketuaRapat->name;
         $this->prnotes = $notulisRapat->name;

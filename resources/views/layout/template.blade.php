@@ -136,7 +136,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="//reunion/resultats"
+                            <a href="/reunion/resultats"
                                 class="nav-link {{ request()->is('/reunion/resultats') || request()->is('/reunion/resultats/*') ? 'active' : '' }}">
                                 <i class="far fas fa-search nav-icon"></i>
                                 <p>Résultats de la réunion</p>
@@ -258,7 +258,7 @@
 
         function saveData() {
             var judul = document.getElementById("judul").value;
-            var tanggal = document.getElementById("tanggal").value;
+            var date = document.getElementById("date").value;
             var mulai = document.getElementById("mulai").value;
             var berakhir = document.getElementById("berakhir").value;
             var tempat = document.getElementById("tempat").value;

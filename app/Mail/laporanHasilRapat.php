@@ -22,7 +22,7 @@ class laporanHasilRapat extends Mailable
     public $judul;
     public $ketua;
     public $notulis;
-    public $tanggal;
+    public $date;
     public $waktu;
     public $tempat;
 
@@ -32,8 +32,8 @@ class laporanHasilRapat extends Mailable
         $notulisRapat = DB::table('users')->where('id', $meetings->minuter)->first();
         $this->id = $meetings->id;
         $this->judul = $meetings->title;
-        $this->tanggal = $meetings->tanggal;
-        $this->waktu = $meetings->waktu_mulai;
+        $this->date = $meetings->date;
+        $this->waktu = $meetings->end_time;
         $this->tempat = $meetings->place;
         $this->ketua = $ketuaRapat->name;
         $this->notulis = $notulisRapat->name;
@@ -52,7 +52,7 @@ class laporanHasilRapat extends Mailable
                      [
                          'id' => $this->id,
                          'judul' => $this->judul,
-                         'tanggal' => $this->tanggal,
+                         'date' => $this->date,
                          'waktu' => $this->waktu,
                          'tempat' => $this->tempat,
                          'ketua' => $this->ketua,

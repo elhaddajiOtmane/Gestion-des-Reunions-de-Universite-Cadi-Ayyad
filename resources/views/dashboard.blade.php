@@ -30,8 +30,8 @@
                                             <tr>
                                                 <td>{{ $no++ }}</td>
                                                 <td>{{ $item->title }}</td>
-                                                <td>{{ $item->tanggal }}</td>
-                                                <td>{{ $item->waktu_mulai }}</td>
+                                                <td>{{ $item->date }}</td>
+                                                <td>{{ $item->end_time }}</td>
                                                 <td>{{ $item->place }}</td>
                                                 <td>
                                                     <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Rapat">

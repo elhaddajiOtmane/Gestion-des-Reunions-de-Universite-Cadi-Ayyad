@@ -30,16 +30,16 @@ class MeetingController extends Controller
         ->join('users', 'meetings.minuter', '=', 'users.id')
         ->join('notes', 'meetings.id', '=', 'notes.meetings_id')
         ->select('meetings.*', 'users.name')
-        ->orderBy('meetings.tanggal', 'desc')
-        ->orderBy('meetings.waktu_mulai', 'desc')
+        ->orderBy('meetings.date', 'desc')
+        ->orderBy('meetings.end_time', 'desc')
         ->where('notes.status', true)
         ->get();
         if (Auth::user()->role==2) {
             $meetings = DB::table('meetings')
             ->join('users', 'meetings.minuter', '=', 'users.id')
             ->join('notes', 'meetings.id', '=', 'notes.meetings_id')
-            ->orderBy('meetings.tanggal', 'desc')
-            ->orderBy('meetings.waktu_mulai', 'desc')
+            ->orderBy('meetings.date', 'desc')
+            ->orderBy('meetings.end_time', 'desc')
             ->select('meetings.*', 'users.name')
             ->get();
         }
@@ -52,8 +52,8 @@ class MeetingController extends Controller
         ->join('users', 'meetings.minuter', '=', 'users.id')
         // ->join('notes', 'meetings.id', '=', )
         ->select('meetings.*', 'users.name')
-        ->orderBy('meetings.tanggal', 'desc')
-        ->orderBy('meetings.waktu_mulai', 'desc')
+        ->orderBy('meetings.date', 'desc')
+        ->orderBy('meetings.end_time', 'desc')
         ->get();
         $now = Carbon::now();
         return view('calendrier', ['meetings' => $meetings, 'now' => $now]);
@@ -75,9 +75,9 @@ class MeetingController extends Controller
         ->get();
         $meetings = new Meeting();
         $meetings->title = $request->judul;
-        $meetings->tanggal = $request->tanggal;
-        $meetings->waktu_mulai = $request->mulai;
-        $meetings->waktu_akhir = $request->berakhir;
+        $meetings->date = $request->date;
+        $meetings->start_time = $request->mulai;
+        $meetings->end_time = $request->berakhir;
         $meetings->place = $request->tempat;
         $meetings->leader = $kaprodi->id;
         $meetings->minuter = $request->notulen;
@@ -172,8 +172,8 @@ class MeetingController extends Controller
         $meetings = DB::table('meetings')->where('meetings.id', $id)->first();
         $now = Carbon::now();
 
-        if ($meetings->tanggal <= $now) {
-            if ($meetings->waktu_mulai <= $now) {
+        if ($meetings->date <= $now) {
+            if ($meetings->end_time <= $now) {
                 flash('Désolé, la réunion sélectionnée a déjà eu lieu.
                 ');
                 return back();
@@ -189,9 +189,9 @@ class MeetingController extends Controller
     {
         $meetings = Meeting::find($request->id);
         $meetings->title = $request->judul;
-        $meetings->tanggal = $request->tanggal;
-        $meetings->waktu_mulai = $request->mulai;
-        $meetings->waktu_akhir = $request->berakhir;
+        $meetings->date = $request->date;
+        $meetings->end_time = $request->mulai;
+        $meetings->end_time = $request->berakhir;
         $meetings->place = $request->tempat;
         $meetings->leader = Auth::user()->id;
         $meetings->minuter = $request->notulen;
@@ -232,7 +232,7 @@ class MeetingController extends Controller
         $anggota = DB::table('absences')
         ->join('users', 'absences.users_id', '=', 'users.id')
         ->join('meetings', 'absences.meetings_id', '=', 'meetings.id')
-        ->select('absences.*', 'users.name', 'meetings.title', 'meetings.tanggal', 'meetings.waktu_mulai')
+        ->select('absences.*', 'users.name', 'meetings.title', 'meetings.date', 'meetings.end_time')
         ->where('absences.meetings_id', $id)
         ->get();
 
@@ -244,7 +244,7 @@ class MeetingController extends Controller
             abort(404);
         }
         $meetings = DB::table('meetings')->where('meetings.id', $id)->first();
-        // $day = Carbon::parse($$meetings->tanggal)->format('l');
+        // $day = Carbon::parse($$meetings->date)->format('l');
         $topics = DB::table('topics')->join('meetings', 'meetings.id', '=', 'topics.meeting_id')
             ->where('meetings.id', $id)->get();
         $notulens = DB::table('users')->where('users.id', $meetings->minuter)->first();

@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <td>Jour/Date</td>
-            <td>: {{\Carbon\Carbon::parse($tanggal)->translatedFormat('l, d F Y')}}</td>
+            <td>: {{\Carbon\Carbon::parse($date)->translatedFormat('l, d F Y')}}</td>
         </tr>
         <tr>
             <td>Heure</td>

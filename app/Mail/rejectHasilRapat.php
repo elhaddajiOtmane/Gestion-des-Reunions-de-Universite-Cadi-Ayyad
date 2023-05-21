@@ -22,7 +22,7 @@ class rejectHasilRapat extends Mailable implements ShouldQueue
     public $judul;
     public $ketua;
     public $notulis;
-    public $tanggal;
+    public $date;
     public $waktu;
     public $tempat;
     public $pesan;
@@ -33,8 +33,8 @@ class rejectHasilRapat extends Mailable implements ShouldQueue
         $notulisRapat = DB::table('users')->where('id', $meetings->minuter)->first();
         $this->id = $meetings->id;
         $this->judul = $meetings->title;
-        $this->tanggal = $meetings->tanggal;
-        $this->waktu = $meetings->waktu_mulai;
+        $this->date = $meetings->date;
+        $this->waktu = $meetings->end_time;
         $this->tempat = $meetings->place;
         $this->ketua = $ketuaRapat->name;
         $this->notulis = $notulisRapat->name;
@@ -54,7 +54,7 @@ class rejectHasilRapat extends Mailable implements ShouldQueue
                      [
                          'id' => $this->id,
                          'judul' => $this->judul,
-                         'tanggal' => $this->tanggal,
+                         'date' => $this->date,
                          'waktu' => $this->waktu,
                          'tempat' => $this->tempat,
                          'ketua' => $this->ketua,

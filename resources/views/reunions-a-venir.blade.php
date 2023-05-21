@@ -17,7 +17,7 @@
                                     <span class="info-box-text text-center text-muted">
                                         Date</span>
                                     <span
-                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->tanggal }}</span>
+                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->date }}</span>
                                 </div>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                                 <div class="info-box-content">
                                     <span class="info-box-text text-center text-muted">Date</span>
                                     <span
-                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->waktu_mulai }}</span>
+                                        class="info-box-number text-center text-muted mb-0">{{ $meetings->end_time }}</span>
                                 </div>
                             </div>
                         </div>
@@ -93,10 +93,10 @@
                     <div>
 
                     @if ($meetings->minuter==Auth::user()->id)
-                        <a href="/meeting/notulensi/{{ $meetings->id }}"><button class="btn btn-sm btn-primary" @if($now->toDateTimeString()<=$meetings->tanggal.' '.$meetings->waktu_mulai)
+                        <a href="/meeting/notulensi/{{ $meetings->id }}"><button class="btn btn-sm btn-primary" @if($now->toDateTimeString()<=$meetings->date.' '.$meetings->end_time)
                             disabled
                         @endif>Catatan</button></a>
-                        <a href="/absen/buatabsen/{{ $meetings->id }}"><button class="btn btn-sm btn-warning" @if($now->toDateTimeString()<=$meetings->tanggal.' '.$meetings->waktu_mulai)
+                        <a href="/absen/buatabsen/{{ $meetings->id }}"><button class="btn btn-sm btn-warning" @if($now->toDateTimeString()<=$meetings->date.' '.$meetings->end_time)
                             disabled
                         @endif>absence</button></a>
                     @endif

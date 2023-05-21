@@ -22,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label for="la date">Date</label>
-                            <input type="date" name="tanggal" id="tanggal" class="form-control" required>
+                            <input type="date" name="date" id="date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="mulai">Commencer</label>

@@ -24,18 +24,18 @@
                                 value="{{ $meetings->id }}" required hidden>
                         </div>
                         <div class="form-group">
-                            <label for="tanggal">Date</label>
-                            <input type="date" name="tanggal" id="tanggal" class="form-control"
-                                value="{{ $meetings->tanggal }}" required>
+                            <label for="date">Date</label>
+                            <input type="date" name="date" id="date" class="form-control"
+                                value="{{ $meetings->date }}" required>
                         </div>
                         <div class="form-group">
                             <label for="mulai">Mulai</label>
                             <input type="time" name="mulai" id="mulai" class="form-control"
-                                value="{{ $meetings->waktu_mulai }}" required>
+                                value="{{ $meetings->end_time }}" required>
                         </div>
                         <div class="form-group">
                             <label for="berakhir">Berakhir</label>
-                            <input type="time" name="berakhir" id="berakhir" value="{{ $meetings->waktu_akhir }}"
+                            <input type="time" name="berakhir" id="berakhir" value="{{ $meetings->end_time }}"
                                 class="form-control">
                         </div>
                         <div class="form-group">
