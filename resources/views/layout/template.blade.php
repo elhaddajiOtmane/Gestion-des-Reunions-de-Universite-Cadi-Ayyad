@@ -49,13 +49,13 @@
                 </li>
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ url('foto/' . Auth::user()->foto) }}" class="user-image img-circle elevation-2"
+                        <img src="{{ url('photo/' . Auth::user()->photo) }}" class="user-image img-circle elevation-2"
                             alt="User Image">
                         <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <li class="user-header bg-primary">
-                            <img src="{{ url('foto/' . Auth::user()->foto) }}" class="img-circle elevation-2"
+                            <img src="{{ url('photo/' . Auth::user()->photo) }}" class="img-circle elevation-2"
                                 alt="User Image">
 
                             <p>
@@ -88,7 +88,7 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="/" class="brand-link">
-                <img src="{{ asset('foto/') }}/nav.png" alt="gestion des réunions" class="brand-image img-circle elevation-3"
+                <img src="{{ asset('photo/') }}/nav.png" alt="gestion des réunions" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">gestion des réunions</span>
             </a>

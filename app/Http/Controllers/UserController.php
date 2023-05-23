@@ -78,8 +78,8 @@ class UserController extends Controller
         if ($request->hasFile('lampiran')) {
             $file = $request->file('lampiran');
             $fileName = $request->name . '.' . $file->extension();
-            $file->move(public_path() . '/foto/', $fileName);
-            $user->foto = $fileName;
+            $file->move(public_path() . '/photo/', $fileName);
+            $user->photo = $fileName;
         }
         $user->save();
         flash('Profile berhasil diperbaharui!')->success();

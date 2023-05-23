@@ -25,7 +25,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <img src="foto/login.png">
+            <img src="photo/login.png">
         </div>
         <!-- /.login-logo -->
         <div class="card">

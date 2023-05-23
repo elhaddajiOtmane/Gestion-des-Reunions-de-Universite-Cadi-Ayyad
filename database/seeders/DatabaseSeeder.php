@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('qpwoei123'),
-            'foto' => 'Foto2.jpg',
+            'photo' => 'photo2.jpg',
             'role'=>1,
         ]);
 
@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'chef de departement',
             'email' => 'user4@gmail.com',
             'password' => Hash::make('qpwoei123'),
-            'foto' => 'foto.jpg',
+            'photo' => 'photo.jpg',
             'role'=>2,
         ]);
 
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'amir ',
             'email' => 'user3@gmail.com',
             'password' => Hash::make('qpwoei123'),
-            'foto' => 'foto.jpg',
+            'photo' => 'photo.jpg',
             'role'=>3,
         ]);
 
@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
             'name' => ' anas',
             'email' => 'user1@gmail.com',
             'password' => Hash::make('qpwoei123'),
-            'foto' => 'foto.jpg',
+            'photo' => 'photo.jpg',
             'role'=>3,
         ]);
 
@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
             'name' => ' amir',
             'email' => 'use@gmail.com',
             'password' => Hash::make('qpwoei123'),
-            'foto' => 'foto.jpg',
+            'photo' => 'photo.jpg',
             'role'=>3,
         ]);
         DB::table('meetings')->insert([

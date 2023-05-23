@@ -17,7 +17,7 @@
                             Date
                         </th>
                         <th style="width: 10%" class="text-center">
-                            Temps
+                           Le temps
                         </th>
                         <th>
                             Lieu

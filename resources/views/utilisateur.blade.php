@@ -43,7 +43,7 @@
                       {{ $data->nama }}
                     </td>
                     <td class="text-center">
-                      <img src="{{ url('foto/'.$data->foto) }}" width="50px" class="table-avatar">
+                      <img src="{{ url('photo/'.$data->photo) }}" width="50px" class="table-avatar">
                     </td>
                     <td class="text-center ">
                       <a class="btn btn-primary btn-sm" href="/user/{{ $data->id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data User">

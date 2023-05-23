@@ -24,12 +24,12 @@ class AbsencesController extends Controller
         if (!$meetings = DB::table('meetings')->find($id)) {
             abort(404);
         }
-        $dataDosen = DB::table('absences')
+        $dataMaitreconf = DB::table('absences')
         ->join('users', 'users.id', '=', 'absences.users_id')
         ->where('meetings_id', $id)
         ->get();
         $meetings = DB::table('meetings')->find($id);
-        return view('absence', ['datas'=>$dataDosen, 'meeting'=>$meetings]);
+        return view('absence', ['datas'=>$dataMaitreconf, 'meeting'=>$meetings]);
     }
 
     public function inputAbsensi(Request $request, $id){

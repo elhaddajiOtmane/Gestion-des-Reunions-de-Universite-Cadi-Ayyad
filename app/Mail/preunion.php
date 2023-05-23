@@ -26,8 +26,8 @@ class izinRapat extends Mailable implements ShouldQueue
     public $waktu;
     public $tempat;
 
-    public $namaDosen;
-    public $emailDosen;
+    public $namaMaitreconf;
+    public $emailMaitreconf;
 
     public $msg;
 
@@ -42,8 +42,8 @@ class izinRapat extends Mailable implements ShouldQueue
         $this->tempat = $meetings->place;
         $this->ketua = $ketuaRapat->name;
         $this->notulis = $notulisRapat->name;
-        $this->namaDosen = $users->name;
-        $this->emailDosen = $users->email;
+        $this->namaMaitreconf = $users->name;
+        $this->emailMaitreconf = $users->email;
         $this->msg = $pesan;
     }
 
@@ -65,8 +65,8 @@ class izinRapat extends Mailable implements ShouldQueue
                          'tempat' => $this->tempat,
                          'ketua' => $this->ketua,
                          'notulis' => $this->notulis,
-                         'nama' => $this->namaDosen,
-                         'email' => $this->emailDosen,
+                         'nama' => $this->namaMaitreconf,
+                         'email' => $this->emailMaitreconf,
                          'pesan' => $this->msg,
                      ]);
     }

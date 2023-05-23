@@ -14,7 +14,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-4 text-center">
-                <img src="{{ url('foto/'.$user->foto) }}" alt="{{ $user->name }}" style="max-width: 65%">
+                <img src="{{ url('photo/'.$user->photo) }}" alt="{{ $user->name }}" style="max-width: 65%">
             </div>
             <div class="col-8">
                 <div class="tab-content">
@@ -36,7 +36,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">Foto</label>
+                                <label for="exampleInputFile">photo</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input name="lampiran" type="file" class="custom-file-input" id="exampleInputFile">

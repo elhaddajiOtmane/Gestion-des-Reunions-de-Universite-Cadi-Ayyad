@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Chers Bapak/Ibu Dosen D3 Teknologi Informasi,</p>
+    <p>Chers Bapak/Ibu Maitreconf D3 Teknologi Informasi,</p>
     <br>
     <p>Ceci est un e-mail de notification concernant le résultat de la réunion avec la description suivante :</p>
     <table>

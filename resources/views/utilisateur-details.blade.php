@@ -15,7 +15,7 @@
         <h5 class="widget-user-desc">{{ $users->email }}</h5>
       </div>
       <div class="widget-user-image">
-        <img class="img-circle elevation-2" src="{{ url('foto/'.$users->foto) }}" alt="User Avatar">
+        <img class="img-circle elevation-2" src="{{ url('photo/'.$users->photo) }}" alt="User Avatar">
       </div>
       <div class="card-footer">
         <div class="row">
