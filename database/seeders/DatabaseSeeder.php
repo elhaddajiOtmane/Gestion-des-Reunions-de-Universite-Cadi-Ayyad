@@ -164,5 +164,84 @@ class DatabaseSeeder extends Seeder
             ]
 
         ]);
+        //  notes table
+
+        DB::table('notes')->insert(
+            [
+
+            [
+                'users_id' => 1,
+                'meetings_id' => 1,
+                'isi' => '1',
+                'status' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'users_id' => 2,
+                'meetings_id' => 2,
+                'isi' => '2',
+                'status' => '2',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'users_id' => 3,
+                'meetings_id' => 3,
+                'isi' => '3',
+                'status' => '3',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'users_id' => 4,
+                'meetings_id' => 4,
+                'isi' => '4',
+                'status' => '4',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'users_id' => 1,
+                'meetings_id' => 1,
+                'isi' => '1',
+                'status' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'users_id' => 2,
+                'meetings_id' => 2,
+                'isi' => '2',
+                'status' => '2',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'users_id' => 3,
+                'meetings_id' => 3,
+                'isi' => '3',
+                'status' => '3',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'users_id' => 4,
+                'meetings_id' => 4,
+                'isi' => '4',
+                'status' => '4',
+                'created_at' => now(),
+                'updated_at' => now(),
+                ]]
+
+
+
+
+
+        );
+
+
+
+
     }
 }
