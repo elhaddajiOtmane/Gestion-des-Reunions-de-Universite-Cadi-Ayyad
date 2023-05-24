@@ -52,7 +52,7 @@
                                 {{ $item->name }}
                             </td>
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="/reunion/resultats/{{ $item->id }}" data-placement="left" title="Lihat Data Hasil Rapat">
+                                <a class="btn btn-primary btn-sm" href="/reunion/resultats/{{ $item->id }}" data-placement="left" title="">
                                     <i class="fas fa-folder">
                                     </i>
                                 </a>
