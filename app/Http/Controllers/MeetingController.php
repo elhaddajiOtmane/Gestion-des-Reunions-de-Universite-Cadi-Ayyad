@@ -107,7 +107,7 @@ class MeetingController extends Controller
             $absence = new Absence();
             $absence->users_id=$item->id;
             $absence->meetings_id=$meetings->id;
-            Mail::to($item->email)->send(new MeetingInvitation($meetings));
+            // Mail::to($item->email)->send(new MeetingInvitation($meetings));
             $absence->save();
         }
 
@@ -221,7 +221,7 @@ class MeetingController extends Controller
             $absence = new Absence();
             $absence->users_id=$item->id;
             $absence->meetings_id=$meetings->id;
-            Mail::to($item->email)->send(new MeetingUpdated($meetings));
+            // Mail::to($item->email)->send(new MeetingUpdated($meetings));
             $absence->save();
         }
         flash('La réunion a été mise à jour avec succèe   .')->warning();

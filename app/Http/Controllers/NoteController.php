@@ -69,7 +69,7 @@ class NoteController extends Controller
         $user = DB::table('users')->get();
         $meeting = DB::table('meetings')->where('id', $id)->first();
         foreach ($user as $user) {
-            Mail::to($user->email)->send(new laporanHasilRapat($meeting));
+            // Mail::to($user->email)->send(new laporanHasilRapat($meeting));
         }
         flash(' publié avec succès
         .')->success();
@@ -86,7 +86,7 @@ class NoteController extends Controller
         ->select('meetings.*', 'users.email')
         ->first();
 
-        Mail::to($user->email)->send(new rejectHasilRapat($user, $request->pesan));
+        // Mail::to($user->email)->send(new rejectHasilRapat($user, $request->pesan));
         flash('MoM telah ditolak.')->error();
         return back();
     }

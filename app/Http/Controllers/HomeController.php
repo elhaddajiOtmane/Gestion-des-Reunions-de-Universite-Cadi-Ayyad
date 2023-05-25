@@ -61,7 +61,7 @@ class HomeController extends Controller
         $user = DB::table('users')
         ->where('id', Auth::user()->id)
         ->first();
-        Mail::to($meeting->email)->send(new preunion($user, $meeting, $request->pesan));
+        // Mail::to($meeting->email)->send(new preunion($user, $meeting, $request->pesan));
 
 
         flash('Undangan telah ditolak.')->error();
