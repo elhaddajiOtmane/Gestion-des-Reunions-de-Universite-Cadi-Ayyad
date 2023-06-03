@@ -29,7 +29,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-{{-- makeing notfcation in progress --}}
+            {{-- makeing notfcation in progress --}}
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -88,8 +88,8 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="/" class="brand-link">
-                <img src="{{ asset('photo/') }}/nav.png" alt="gestion des réunions" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+                <img src="{{ asset('photo/') }}/nav.png" alt="gestion des réunions"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">gestion des réunions</span>
             </a>
 
@@ -109,29 +109,32 @@
                             </a>
                         </li>
                         @if (auth()->user()->role == 1)
-                            <li class="nav-item">
-                                <a href="/user" class="nav-link {{ request()->is('user') || request()->is('user/*') ? 'active' : '' }}">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>
-                                        Users
-                                    </p>
-                                </a>
-                            </li>
-                        @endif
-                        @if (auth()->user()->role == 2)
-                            <li class="nav-item">
-                                <a href="/reunion/create"
-                                    class="nav-link {{ request()->is('reunion/create') ? 'active' : '' }}">
-                                    <i class="far fa-plus-square nav-icon"></i>
-                                    <p>Créer une réunion</p>
-                                </a>
-                            </li>
-                        @endif
                         <li class="nav-item">
-                            <a href="/reunion/horaire" class="nav-link {{ request()->is('reunion/horaire') || request()->is('reunion/horaire/*')  ? 'active' : '' }}">
+                            <a href="/user"
+                                class="nav-link {{ request()->is('user') || request()->is('user/*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        @if (auth()->user()->role == 1 || auth()->user()->role == 2)
+                        <li class="nav-item">
+                            <a href="/reunion/create"
+                                class="nav-link {{ request()->is('reunion/create') ? 'active' : '' }}">
+                                <i class="far fa-plus-square nav-icon"></i>
+                                <p>Créer une réunion</p>
+                            </a>
+                        </li>
+                        @endif
+
+                        <li class="nav-item">
+                            <a href="/reunion/horaire"
+                                class="nav-link {{ request()->is('reunion/horaire') || request()->is('reunion/horaire/*')  ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
-                                    Calendrier
+                                    Calendrier des réunions
                                 </p>
                             </a>
                         </li>

@@ -52,14 +52,14 @@
                                 {{ $item->name }}
                             </td>
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Rapat">
+                                <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Meeting">
                                     <i class="fas fa-eye">
                                     </i>
                                 </a>
 
-                                @if (auth()->user()->role == 2)
+                                @if (auth()->user()->role == 1 || auth()->user()->role == 2)
                                     @if ($now->toDateTimeString() < $item->date.' '.$item->end_time)
-                                        <a class="btn btn-info btn-sm" href="/meeting/edit/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Edit Data Rapat">
+                                        <a class="btn btn-info btn-sm" href="/meeting/edit/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Edit Data Meeting">
                                             <i class="fas fa-pencil-alt">
                                             </i>
                                         </a>

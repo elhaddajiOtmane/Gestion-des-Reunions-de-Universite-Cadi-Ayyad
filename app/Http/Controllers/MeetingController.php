@@ -24,7 +24,7 @@ class MeetingController extends Controller
         $this->middleware('auth');
     }
 
-    public function hasilRapat()
+    public function meetingResults()
     {
         $meetings = DB::table('meetings')
         ->join('users', 'meetings.minuter', '=', 'users.id')
@@ -46,7 +46,7 @@ class MeetingController extends Controller
         return view('resultat-reunion', ['meetings' => $meetings]);
     }
 
-    public function jadwalRapat()
+    public function schedulemeeting()
     {
         $meetings = DB::table('meetings')
         ->join('users', 'meetings.minuter', '=', 'users.id')
@@ -59,14 +59,14 @@ class MeetingController extends Controller
         return view('calendrier', ['meetings' => $meetings, 'now' => $now]);
     }
 
-    public function buatRapat()
+    public function createMeeting()
     {
         $users = DB::table('users')->where('role', '3')
         ->orderBy('name', 'asc')->get();
         $meetings = DB::table('meetings')->latest()->first();
         return view('creer-reunion', ['users' => $users, 'meetings' => $meetings]);
     }
-    public function createRapat(Request $request)
+    public function storeMeeting(Request $request)
     {
         $kaprodi = DB::table('users')->where('role', '2')->first();
         $users = DB::table('users')
@@ -110,11 +110,20 @@ class MeetingController extends Controller
             // Mail::to($item->email)->send(new MeetingInvitation($meetings));
             $absence->save();
         }
-
+        // redirect to /reunion/horaire and has this info
         flash('Réunion créée avec succès..')->success();
-        return $this->jadwalRapat();
+        
+        return redirect('/reunion/horaire')->with('success', 'Réunion créée avec succès..');
+
+
+
+
+
+
+
+
     }
-    public function detailJadwalRapat($id)
+    public function detailschedulemeeting($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
             abort(404);
@@ -133,7 +142,7 @@ class MeetingController extends Controller
         return view('reunions-a-venir', ['meetings' => $meetings, 'lampirans' => $lampiran, 'topik' => $topik, 'notulen' => $notulens, 'leaders' => $leaders, 'result' => $result, 'dokumentasi' => $dokumentasi, 'now'=>$now]);
     }
 
-    public function detailHasilRapat($id)
+    public function detailmeetingResults($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
             abort(404);
@@ -151,7 +160,7 @@ class MeetingController extends Controller
         return view('detail-resultat-reunion', ['meetings' => $meetings, 'lampirans' => $lampiran, 'topik' => $topik, 'notulen' => $notulens, 'leaders' => $leaders, 'result' => $result, 'dokumentasi' => $dokumentasi]);
     }
 
-    public function deleteRapat($id)
+    public function deleteMeeting($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
             abort(404);
@@ -159,10 +168,10 @@ class MeetingController extends Controller
         DB::table('meetings')->delete($id);
 
         flash('La réunion a été supprimée  .')->error();
-        return $this->jadwalRapat();
+        return $this->schedulemeeting();
     }
 
-    public function editRapat($id)
+    public function editMeeting($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
             flash('Désolé, réunion introuvable      .')->error();
@@ -185,7 +194,7 @@ class MeetingController extends Controller
         return view('modifier-reunion', ['meetings' => $meetings, 'users' => $users]);
     }
 
-    public function updateRapat(Request $request)
+    public function updateMeeting(Request $request)
     {
         $meetings = Meeting::find($request->id);
         $meetings->title = $request->judul;
@@ -225,10 +234,10 @@ class MeetingController extends Controller
             $absence->save();
         }
         flash('La réunion a été mise à jour avec succèe   .')->warning();
-        return $this->jadwalRapat();
+        return $this->schedulemeeting();
     }
 
-    public function anggotaRapat($id){
+    public function meetingmembers($id){
         $anggota = DB::table('absences')
         ->join('users', 'absences.users_id', '=', 'users.id')
         ->join('meetings', 'absences.meetings_id', '=', 'meetings.id')

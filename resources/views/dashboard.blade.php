@@ -34,16 +34,16 @@
                                                 <td>{{ $item->end_time }}</td>
                                                 <td>{{ $item->place }}</td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Rapat">
+                                                    <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Meeting">
                                                         <i class="fas fa-eye"></i>
                                                     </a>
-                                                    <a class="btn btn-success btn-sm" href="/undangan/terimaUndangan/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Terima Undangan Rapat">
+                                                    <a class="btn btn-success btn-sm" href="/undangan/terimaUndangan/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Terima Undangan Meeting">
                                                         <i class="fas fa-check"></i>
                                                     </a>
                                                     {{-- <a class="btn btn-danger btn-sm" href="/undangan/tolakUndangan/{{ $item->meetings_id }}">
                                                         <i class="fas fa-ban"></i>
                                                     </a> --}}
-                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default" data-id="{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Tolak Undangan Rapat">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default" data-id="{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Tolak Undangan Meeting">
                                                         <i class="fas fa-ban"></i>
                                                     </button>
 

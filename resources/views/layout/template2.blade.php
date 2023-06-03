@@ -133,7 +133,7 @@
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
 
-Calendrier
+Calendrier des réunions
                                 </p>
                             </a>
                         </li>

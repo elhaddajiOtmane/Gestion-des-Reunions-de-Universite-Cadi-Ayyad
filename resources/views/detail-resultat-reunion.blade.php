@@ -132,7 +132,7 @@
             </div>
         </div>
     </div>
-    @if (Auth::user()->role==2 && is_null($result->status))
+    @if ((Auth::user()->role==2 || Auth::user()->role==1) && $meetings->status == 0)
     <div class="row">
         <div class="col-12">
             <a href="terimaHasilRapat/{{ $meetings->id }}" class="btn btn-success btn-block">Terima</a>

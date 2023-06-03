@@ -10,9 +10,9 @@ use App\Http\Controllers\MeetingController;
 use App\Models\notes;
 use App\Models\Documentations;
 use App\Http\Controllers\TasksController;
-use App\Mail\publishHasilRapat;
-use App\Mail\rejectHasilRapat;
-use App\Mail\laporanHasilRapat;
+use App\Mail\publishmeetingResults;
+use App\Mail\rejectmeetingResults;
+use App\Mail\laporanmeetingResults;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -59,23 +59,23 @@ class NoteController extends Controller
         flash(' créé avec succès        .')->success();
         $home = new MeetingController;
 
-        return $home->detailJadwalRapat($request->id);
+        return $home->detailschedulemeeting($request->id);
     }
 
-    public function acceptHasilRapat($id){
+    public function acceptmeetingResults($id){
         $notes = notes::firstOrNew(['meetings_id' => $id]);
         $notes->status=true;
         $notes->save();
         $user = DB::table('users')->get();
         $meeting = DB::table('meetings')->where('id', $id)->first();
         foreach ($user as $user) {
-            // Mail::to($user->email)->send(new laporanHasilRapat($meeting));
+            // Mail::to($user->email)->send(new laporanmeetingResults($meeting));
         }
         flash(' publié avec succès
         .')->success();
         return back();
     }
-    public function rejectHasilRapat(Request $request){
+    public function rejectmeetingResults(Request $request){
         $notes = notes::firstOrNew(['meetings_id' => $request->id]);
         $notes->status=false;
         $notes->save();
@@ -86,7 +86,7 @@ class NoteController extends Controller
         ->select('meetings.*', 'users.email')
         ->first();
 
-        // Mail::to($user->email)->send(new rejectHasilRapat($user, $request->pesan));
+        // Mail::to($user->email)->send(new rejectmeetingResults($user, $request->pesan));
         flash('MoM telah ditolak.')->error();
         return back();
     }

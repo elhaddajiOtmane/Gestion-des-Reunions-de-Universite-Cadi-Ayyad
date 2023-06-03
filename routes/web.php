@@ -27,34 +27,20 @@ use App\Http\Controllers\PdfController;
 ;
 
 
-// '/' => '/',
-// '/meeting/anggota/{id}' => '/reunion/membre/{id}',
-// '/meeting/hasil' => '/reunion/resultats',
-// '/meeting/hasil/{id}' => '/reunion/resultats/{id}',
-// '/meeting/hasil/download/{id}' => '/reunion/resultats/telecharger/{id}',
-// '/meeting/jadwal' => '/reunion/horaire',
-// '/meeting/jadwal/{id}' => '/reunion/horaire/{id}',
-// '/user/{id}' => '/utilisateur/{id}',
-// '/user.updateProfile' => '/utilisateur/modifier/profil',
-// '/user/edit/editPassword' => '/utilisateur/modifier/motdepasse',
-// '/user/edit/editProfile' => '/utilisateur/modifier/profil',
-// '/user/edit/{id}' => '/utilisateur/modifier/{id}'
-
-
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
 
-Route::get('/meeting/anggota/{id}', [MeetingController::class, 'anggotaRapat'])->name('meeting.members');
+Route::get('/meeting/anggota/{id}', [MeetingController::class, 'meetingmembers'])->name('meeting.members');
 
-Route::get('/reunion/resultats',[MeetingController::class, 'hasilRapat'])->name('meeting.results');
+Route::get('/reunion/resultats',[MeetingController::class, 'meetingResults'])->name('meeting.results');
 
-Route::get('/meeting/resultats/{id}',[MeetingController::class, 'detailHasilRapat'])->name('meeting.results.details');
+Route::get('/meeting/resultats/{id}',[MeetingController::class, 'detailmeetingResults'])->name('meeting.results.details');
 
 Route::get('/reunion/resultats/download/{id}',[MeetingController::class, 'printPdf'])->name('meeting.results.pdf');
 
-Route::get('/reunion/horaire',[MeetingController::class, 'jadwalRapat'])->name('meeting.schedule');
+Route::get('/reunion/horaire',[MeetingController::class, 'schedulemeeting'])->name('meeting.schedule');
 
-Route::get('/reunion/horaire/{id}',[MeetingController::class, 'detailJadwalRapat'])->name('meeting.schedule.details');
+Route::get('/reunion/horaire/{id}',[MeetingController::class, 'detailschedulemeeting'])->name('meeting.schedule.details');
 
 Route::get('/user/{id}',[UserController::class, 'detail'])->name('user.details');
 
@@ -78,25 +64,25 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'Responsable'])->group(function () {
-    Route::get('/reunion/create', [MeetingController::class, 'buatRapat'])->name('meeting.create');
+    Route::get('/reunion/create', [MeetingController::class, 'createMeeting'])->name('meeting.create');
 
-    Route::get('/meeting/edit/{id}',[MeetingController::class, 'editRapat'])->name('meeting.edit');
+    Route::get('/meeting/edit/{id}',[MeetingController::class, 'editMeeting'])->name('meeting.edit');
 
-    Route::get('/meeting/delete/{id}',[MeetingController::class, 'deleteRapat'])->name('meeting.delete');
+    Route::get('/meeting/delete/{id}',[MeetingController::class, 'deleteMeeting'])->name('meeting.delete');
 
-    Route::post('/meeting-store',[MeetingController::class, 'createRapat'])->name('meeting.store');
+    Route::post('/meeting-store',[MeetingController::class, 'storeMeeting'])->name('meeting.store');
 
-    Route::post('/meetingupdate',[MeetingController::class, 'updateRapat'])->name('meeting.update');
+    Route::post('/meetingupdate',[MeetingController::class, 'updateMeeting'])->name('meeting.update');
 
-    Route::get('reunion/resultats/terimaHasilRapat/{id}', [NoteController::class, 'acceptHasilRapat'])->name('note.accept');
+    Route::get('reunion/resultats/terimameetingResults/{id}', [NoteController::class, 'acceptmeetingResults'])->name('note.accept');
 
-    Route::post('reunion/resultats/tolakHasilRapat', [NoteController::class, 'rejectHasilRapat'])->name('note.reject');
+    Route::post('reunion/resultats/tolakmeetingResults', [NoteController::class, 'rejectmeetingResults'])->name('note.reject');
 
 });
 
 
 Route::middleware(['auth', 'Maitreconf'])->group(function () {
-    Route::get('/absen/buatabsen/{id}', [AbsencesController::class, 'buatAbsensi'])->name('absen.buatabsen');
+    Route::get('/absen/buatabsen/{id}', [AbsencesController::class, 'makeAttendance'])->name('absen.buatabsen');
 
     Route::post('/absen/input/{id}', [AbsencesController::class, 'inputAbsensi'])->name('absen.input');
 
