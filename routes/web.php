@@ -30,11 +30,11 @@ use App\Http\Controllers\PdfController;
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
 
-Route::get('/meeting/anggota/{id}', [MeetingController::class, 'meetingmembers'])->name('meeting.members');
+Route::get('/reunions/membres/{id}', [MeetingController::class, 'reunionmembres'])->name('meeting.members');
 
 Route::get('/reunion/resultats',[MeetingController::class, 'meetingResults'])->name('meeting.results');
 
-Route::get('/meeting/resultats/{id}',[MeetingController::class, 'detailmeetingResults'])->name('meeting.results.details');
+Route::get('/reunion/resultats/{id}',[MeetingController::class, 'detailmeetingResults'])->name('meeting.results.details');
 
 Route::get('/reunion/resultats/download/{id}',[MeetingController::class, 'printPdf'])->name('meeting.results.pdf');
 
@@ -59,7 +59,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/user',[UserController::class, 'index'])->name('admin.users');
 
-    // Route::get('/delete/{id}',[UserController::class, 'delete'] );
+    Route::get('/delete/{id}',[UserController::class, 'delete'] );
 
 });
 
@@ -74,9 +74,9 @@ Route::middleware(['auth', 'Responsable'])->group(function () {
 
     Route::post('/meetingupdate',[MeetingController::class, 'updateMeeting'])->name('meeting.update');
 
-    Route::get('reunion/resultats/terimameetingResults/{id}', [NoteController::class, 'acceptmeetingResults'])->name('note.accept');
+    Route::get('reunion/resultats/terima/meetingResults/{id}', [NoteController::class, 'acceptmeetingResults'])->name('note.accept');
 
-    Route::post('reunion/resultats/tolakmeetingResults', [NoteController::class, 'rejectmeetingResults'])->name('note.reject');
+    Route::post('reunion/resultats/tolak/meetingResults', [NoteController::class, 'rejectmeetingResults'])->name('note.reject');
 
 });
 

@@ -34,7 +34,7 @@ class MeetingController extends Controller
         ->orderBy('meetings.end_time', 'desc')
         ->where('notes.status', true)
         ->get();
-        if (Auth::user()->role==2) {
+        if (Auth::user()->role==2 || Auth::user()->role==1) {
             $meetings = DB::table('meetings')
             ->join('users', 'meetings.minuter', '=', 'users.id')
             ->join('notes', 'meetings.id', '=', 'notes.meetings_id')
@@ -112,7 +112,7 @@ class MeetingController extends Controller
         }
         // redirect to /reunion/horaire and has this info
         flash('Réunion créée avec succès..')->success();
-        
+
         return redirect('/reunion/horaire')->with('success', 'Réunion créée avec succès..');
 
 
@@ -126,7 +126,7 @@ class MeetingController extends Controller
     public function detailschedulemeeting($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
-            abort(404);
+            echo "<h1>not found<h1>";
         }
         $meetings = DB::table('meetings')->where('meetings.id', $id)->first();
         $lampiran = DB::table('attachments')->join('meetings', 'meetings.id', '=', 'attachments.meetings_id')
@@ -145,7 +145,7 @@ class MeetingController extends Controller
     public function detailmeetingResults($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
-            abort(404);
+            echo "<h1>not found<h1>";
         }
         $meetings = DB::table('meetings')->where('meetings.id', $id)->first();
         $lampiran = DB::table('attachments')->join('meetings', 'meetings.id', '=', 'attachments.meetings_id')
@@ -163,7 +163,7 @@ class MeetingController extends Controller
     public function deleteMeeting($id)
     {
         if (!$meetings = DB::table('meetings')->find($id)) {
-            abort(404);
+            echo "<h1>not found<h1>";
         }
         DB::table('meetings')->delete($id);
 
@@ -237,7 +237,7 @@ class MeetingController extends Controller
         return $this->schedulemeeting();
     }
 
-    public function meetingmembers($id){
+    public function reunionmembres($id){
         $anggota = DB::table('absences')
         ->join('users', 'absences.users_id', '=', 'users.id')
         ->join('meetings', 'absences.meetings_id', '=', 'meetings.id')

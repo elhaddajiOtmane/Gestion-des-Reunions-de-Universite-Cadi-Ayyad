@@ -73,7 +73,7 @@
                             </a>
                         </p>
                         <p class="text-sm">
-                            <a href="/meeting/anggota/{{ $meetings->id }}">
+                            <a href="/reunions/membres/{{ $meetings->id }}">
                                 <b class="d-block">Membre de la réunion</b>
                             </a>
                         </p>
@@ -132,13 +132,13 @@
             </div>
         </div>
     </div>
-    @if ((Auth::user()->role==2 || Auth::user()->role==1) && $meetings->status == 0)
+    @if (Auth::user()->role==2 || Auth::user()->role==1 )
     <div class="row">
         <div class="col-12">
-            <a href="terimaHasilRapat/{{ $meetings->id }}" class="btn btn-success btn-block">Terima</a>
+            <a href="terima/meetingResults/{{ $meetings->id }}" class="btn btn-success btn-block">accepter</a>
             {{-- <a href="tolakHasilRapat/{{ $meetings->id }}" class="btn btn-danger btn-block">Tolak</a> --}}
             <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#modal-default">
-                Tolak
+                Rejeter
             </button>
         </div>
         <div class="modal fade" id="modal-default">

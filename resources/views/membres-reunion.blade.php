@@ -1,6 +1,6 @@
 @extends('layout.template2')
 
-@section('title', 'Membres de la réunion')
+@section('title', 'Statut de la réunion')
 @section('content')
 {{-- <h1>{{ $anggota->la date }}</h1> --}}
 <div class="card">

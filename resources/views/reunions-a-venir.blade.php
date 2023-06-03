@@ -71,7 +71,7 @@
                             </a>
                         </p>
                         <p class="text-sm">
-                            <a href="/meeting/anggota/{{ $meetings->id }}">
+                            <a href="/reunions/membres/{{ $meetings->id }}">
                                 <b class="d-block">Membre de la réunion</b>
                             </a>
                         </p>
