@@ -184,6 +184,8 @@ class MeetingController extends Controller
 
     public function updateMeeting(Request $request)
     {
+    $users = DB::table('users')->where('role', '3')
+        ->orderBy('name', 'asc')->get();
         $meetings = Meeting::find($request->id);
         $meetings->title = $request->judul;
         $meetings->date = $request->date;
@@ -191,7 +193,7 @@ class MeetingController extends Controller
         $meetings->end_time = $request->berakhir;
         $meetings->place = $request->tempat;
         $meetings->leader = Auth::user()->id;
-        $meetings->minuter = $request->notulen;
+        $meetings->minuter = $request->notulen ? $request->notulen : $users->first()->id;
         $meetings->save();
 
         if ($request->hasfile('lampiran')) {
