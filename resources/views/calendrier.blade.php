@@ -19,12 +19,10 @@
                         <th style="width: 10%" class="text-center">
                             Temps
                         </th>
-                        <th>
+                        <th class="text-center">
                             Lieu
                         </th>
-                        <th style="width: 20%" class="text-center">
-                            distinatire
-                        </th>
+
                         <th style="width: 20%">
                         </th>
                     </tr>
@@ -48,23 +46,21 @@
                             <td class="text-center">
                                 {{ $item->place }}
                             </td>
-                            <td class="text-center">
-                                {{ $item->name }}
-                            </td>
+
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Are you sure you want to delete?">
+                                <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Meeting">
                                     <i class="fas fa-eye">
                                     </i>
                                 </a>
 
-                                @if (auth()->user()->role == 1 || auth()->user()->role == 2 )
+                                @if (auth()->user()->role == 1 || auth()->user()->role == 2)
                                     @if ($now->toDateTimeString() < $item->date.' '.$item->end_time)
                                         <a class="btn btn-info btn-sm" href="/meeting/edit/{{ $item->id }}" data-toggle="tooltip" data-placement="left" title="Edit Data Meeting">
                                             <i class="fas fa-pencil-alt">
                                             </i>
                                         </a>
                                         <a class="btn btn-danger btn-sm swalDefaultSuccess" data-toggle="tooltip" data-placement="left" title="Supprimer les données de réunion
-                                        " href="/meeting/delete/{{ $item->id }}" onclick="return confirm('Are you sure you want to delete?')">
+                                        " href="/meeting/delete/{{ $item->id }}" onclick="return confirm('Apakah anda yakin ingin menghapus?')">
                                             <i class="fas fa-trash">
                                             </i>
                                         </a>
