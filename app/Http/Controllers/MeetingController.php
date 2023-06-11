@@ -68,40 +68,28 @@ class MeetingController extends Controller
     }
     public function storeMeeting(Request $request)
     {
-        $kaprodi = DB::table('users')->where('role', '2')->first();
-        $users = DB::table('users')
+    $kaprodi = DB::table('users')->where('role', '1')->first();
+    $users = DB::table('users')
         ->where('role', '=', '3')
         ->orderBy('name', 'asc')
         ->get();
-        $meetings = new Meeting();
-        $meetings->title = $request->judul;
-        $meetings->date = $request->date;
-        $meetings->start_time = $request->mulai;
-        $meetings->end_time = $request->berakhir;
-        $meetings->place = $request->tempat;
-        $meetings->leader = $kaprodi->id;
-        $meetings->minuter = $request->notulen;
-        $meetings->created_by = Auth::user()->id;
-        $meetings->save();
-        for ($i = 0; $i < count($request->field_name); $i++) {
-            $topics = new Topics();
-            $topics->judul = $request->field_name[$i];
-            $topics->meeting_id = $meetings->id;
-            $topics->save();
-        }
-
-        if ($request->hasfile('lampiran')) {
-            for ($i = 0; $i < count($request->lampiran); $i++) {
-                $file = $request->lampiran[$i];
-                $name = $file->getClientOriginalName();
-                $file->move(public_path() . '/files/', $name);
-
-                $file = new Attachments();
-                $file->Path = $name;
-                $file->meetings_id = $meetings->id;
-                $file->save();
+    $meetings = new Meeting();
+    $meetings->title = $request->judul;
+    $meetings->date = $request->date;
+    $meetings->start_time = $request->mulai;
+    $meetings->end_time = $request->berakhir;
+    $meetings->place = $request->tempat;
+    $meetings->leader = $kaprodi->id;
+    $meetings->minuter = $request->notulen ? $request->notulen : $users->first()->id; // set default value if notulen is empty
+    $meetings->created_by = Auth::user()->id;
+    $meetings->save();
+    for ($i = 0; $i < count($request->field_name); $i++) {
+        $topics = new Topics();
+        $topics->judul = $request->field_name[$i];
+        $topics->meeting_id = $meetings->id;
+        $topics->save();
             }
-        }
+
 
         foreach ($users as $item) {
             $absence = new Absence();
@@ -264,7 +252,7 @@ class MeetingController extends Controller
         ->join('users', 'absences.users_id', '=', 'users.id')
         ->select('absences.*', 'users.name')
         ->where('absences.meetings_id', $id)
-        ->where('absences.respon', 2)
+        ->where('absences.respon', 1)
         ->get();
 
         return view('CR-reunion', ['meeting' => $meetings, 'topik' => $topics, 'notulen' => $notulens, 'leader' => $leaders, 'result' => $results, 'dokumentasi' => $documentations, 'anggota' => $member]);

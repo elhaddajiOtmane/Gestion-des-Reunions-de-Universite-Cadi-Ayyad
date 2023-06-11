@@ -47,7 +47,7 @@ class AbsencesController extends Controller
             DB::table('absences')
             ->where('meetings_id', $id)
             ->where('users_id', $request->dataAbsen[$i])
-            ->update(['respon' => 2]);
+            ->update(['respon' => 1]);
         }
 
         $home = new MeetingController;

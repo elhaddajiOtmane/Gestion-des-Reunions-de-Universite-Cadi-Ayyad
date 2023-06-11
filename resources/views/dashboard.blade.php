@@ -34,7 +34,7 @@
                                                 <td>{{ $item->end_time }}</td>
                                                 <td>{{ $item->place }}</td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Lihat Data Meeting">
+                                                    <a class="btn btn-primary btn-sm" href="/reunion/horaire/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Are you sure you want to delete?">
                                                         <i class="fas fa-eye"></i>
                                                     </a>
                                                     <a class="btn btn-success btn-sm" href="/undangan/terimaUndangan/{{ $item->meetings_id }}" data-toggle="tooltip" data-placement="left" title="Terima Undangan Meeting">

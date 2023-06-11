@@ -37,22 +37,7 @@
                             <input type="text" name="tempat" id="tempat" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="notulen">destinataire</label>
-                            <select id="notulen" name="notulen" class="form-control">
-                                    @foreach ($users as $item)
-                                        @if (!is_null($meetings))
-                                        <option value="{{ $item->id }}"
-                                            @if ($item->id == $meetings->minuter)disabled @endif>
-                                            {{ $item->name }}
-                                            @if ($item->id == $meetings->minuter)(Désactivé)@endif
-                                        </option>
-                                        @else
-                                        <option value="{{ $item->id }}">
-                                            {{ $item->name }}
-                                        </option>
-                                        @endif
-                                    @endforeach
-                            </select>
+                            
                         </div>
                     </div>
                     <!-- /.card-body -->
